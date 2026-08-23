@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#121212" />
+  <meta name="description" content="Portfolio of Diana Alves: biomedical technology, computational neuroscience, neural decoding and neurotechnology." />
+  <meta name="keywords" content="Diana Alves, Biomedical Technology, Computational Neuroscience, Neural Decoding, Neurotechnology, Portugal" />
+  <meta property="og:title" content="Diana Alves — Biomedical Technology × Computational Neuroscience" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://diana-neurotech-portfolio.vercel.app/" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
+  <link rel="canonical" href="https://diana-neurotech-portfolio.vercel.app/" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <meta property="og:description" content="Projects and interests across neural decoding, motor control, data and biomedical innovation." />
+  <title>Diana Alves — Biomedical Technology × Computational Neuroscience</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Diana Alves",
+    "url": "https://diana-neurotech-portfolio.vercel.app/",
+    "sameAs": ["https://github.com/dianaalves397"],
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Instituto Politécnico de Setúbal"
+    },
+    "knowsAbout": [
+      "Biomedical Technology",
+      "Computational Neuroscience",
+      "Neural Decoding",
+      "Motor Control",
+      "Neurotechnology",
+      "Brain-Computer Interfaces"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <main class="site-shell">
+    <div class="scroll-line" id="scrollLine"></div>
+    <header class="topbar">
+      <a href="#top" class="monogram" aria-label="Back to top">DA</a>
+      <nav aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#research">Research map</a>
+        <a href="#about">About</a>
+      </nav>
+      <a class="availability" href="https://github.com/dianaalves397" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </header>
+
+    <section id="top" class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow-row"><span>Biomedical Technology</span><span>Portugal · 2026</span></div>
+        <h1><span class="hero-line">Diana</span><span class="hero-line italic">Alves</span></h1>
+        <p class="hero-intro">Building toward <strong>computational neuroscience</strong>, neural decoding and neurotechnology — where biological signals become models, movement and useful products.</p>
+        <div class="hero-actions"><a href="#work" class="pill primary">Explore work ↓</a><a href="#research" class="pill ghost">Move through my interests</a></div>
+      </div>
+      <div class="hero-visual">
+        <canvas id="neuralField" class="neural-field" aria-label="Interactive abstract neural population visualization"></canvas>
+        <div class="visual-caption"><span>01</span> move your pointer through the neural field</div>
+        <div class="orb orb-a"></div><div class="orb orb-b"></div><div class="vertical-word">DECODE</div>
+      </div>
+    </section>
+
+    <section class="marquee" aria-label="Areas of interest"><div class="marquee-track"><span>NEURAL DECODING ✦ MOTOR CONTROL ✦ BCI ✦ BIOMEDICAL DATA ✦ COMPUTATIONAL NEUROSCIENCE ✦ PRODUCT THINKING ✦ </span><span aria-hidden="true">NEURAL DECODING ✦ MOTOR CONTROL ✦ BCI ✦ BIOMEDICAL DATA ✦ COMPUTATIONAL NEUROSCIENCE ✦ PRODUCT THINKING ✦ </span></div></section>
+
+    <section id="work" class="work-section">
+      <div class="section-kicker">Selected work / experiments</div>
+      <div class="work-heading-row"><h2>From signals<br />to meaning.</h2><p>Projects are presented as evolving research objects: what I can reproduce, test and explain — not inflated claims.</p></div>
+      <div class="project-grid">
+        <article class="tilt-card project-card project-primary">
+          <div class="project-index">001 / SELF-INITIATED</div>
+          <div class="project-art decoder-art" aria-hidden="true">
+            <div class="axis axis-x"></div><div class="axis axis-y"></div>
+            <span class="spike" style="left:8%;height:18%"></span><span class="spike" style="left:15.4%;height:49%"></span><span class="spike" style="left:22.8%;height:80%"></span><span class="spike" style="left:30.2%;height:49%"></span><span class="spike" style="left:37.6%;height:80%"></span><span class="spike" style="left:45%;height:49%"></span><span class="spike" style="left:52.4%;height:80%"></span><span class="spike" style="left:59.8%;height:49%"></span><span class="spike" style="left:67.2%;height:80%"></span><span class="spike" style="left:74.6%;height:49%"></span><span class="spike" style="left:82%;height:80%"></span><span class="spike" style="left:89.4%;height:49%"></span>
+            <div class="decoder-label">40 neurons → 8 directions</div>
+          </div>
+          <div class="project-copy">
+            <h3>Movement Intention Decoder</h3><p>A reproducible introductory neural-decoding experiment using synthetic population activity and a logistic-regression classifier.</p>
+            <div class="metric-row"><div><strong>84.5%</strong><span>test accuracy</span></div><div><strong>89.6%</strong><span>cross-validation mean</span></div><div><strong>40</strong><span>synthetic neurons</span></div></div>
+            <div class="tag-row"><span>Python</span><span>scikit-learn</span><span>neural population</span></div>
+          </div>
+        </article>
+
+        <article class="tilt-card project-card project-secondary">
+          <div class="project-index">002 / OPEN SOURCE</div>
+          <div class="project-art emg-art" aria-hidden="true"><svg viewBox="0 0 500 180"><path d="M0 94 L18 92 L30 93 L40 40 L47 139 L57 73 L65 94 L95 96 L118 93 L132 55 L140 130 L151 79 L160 93 L205 94 L225 93 L236 30 L244 154 L255 69 L266 94 L305 94 L320 92 L330 49 L338 135 L349 75 L360 94 L410 93 L425 92 L438 58 L447 125 L458 79 L469 93 L500 94" /></svg><span class="emg-badge">HD-EMG / MOTOR UNITS</span></div>
+          <div class="project-copy"><h3>emg2mu — bug analysis</h3><p>Investigated a good-first-issue in motor-unit decomposition: consecutive spikes below the physiological firing interval were not removed reliably.</p><div class="open-source-note">Patch + regression test prepared · upstream PR not yet published</div><a class="text-link" href="https://github.com/neuromechanist/emg2mu/issues/16" target="_blank" rel="noreferrer">See upstream issue ↗</a></div>
+        </article>
+
+        <article class="tilt-card project-card project-concept">
+          <div class="project-index">003 / NEXT</div><div class="concept-number">NLB</div><div class="project-copy"><h3>Real neural data, next.</h3><p>The next progression is to move from synthetic spikes to a public neural benchmark dataset, document preprocessing and compare simple baselines before more complex models.</p><div class="tag-row"><span>planned</span><span>benchmarking</span><span>reproducibility</span></div></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="research" class="research-section">
+      <div class="research-copy"><div class="section-kicker light">Interactive research map</div><h2>Not a list<br />of buzzwords.</h2><p class="research-lead">These themes are connected. Tap a node to see what it means in the direction I am building.</p><div class="active-node-panel" aria-live="polite"><span id="activeNodeLabel">Neural decoding</span><p id="activeNodeText">Turning population activity into interpretable movement or intention.</p></div></div>
+      <div class="constellation" role="group" aria-label="Interactive map of research interests">
+        <svg class="constellation-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line x1="25" y1="35" x2="48" y2="45"/><line x1="48" y1="45" x2="68" y2="20"/><line x1="48" y1="45" x2="76" y2="61"/><line x1="48" y1="45" x2="46" y2="74"/><line x1="25" y1="35" x2="14" y2="72"/><line x1="14" y1="72" x2="46" y2="74"/><line x1="68" y1="20" x2="76" y2="61"/></svg>
+        <button type="button" class="research-node active" data-label="Neural decoding" data-text="Turning population activity into interpretable movement or intention." style="left:25%;top:35%;--node-scale:1.35" aria-pressed="true"><span>Neural decoding</span></button>
+        <button type="button" class="research-node" data-label="Motor control" data-text="How neural dynamics generate action, coordination and behaviour." style="left:68%;top:20%;--node-scale:1.12" aria-pressed="false"><span>Motor control</span></button>
+        <button type="button" class="research-node" data-label="BCI" data-text="Interfaces that translate neural signals into useful control." style="left:76%;top:61%;--node-scale:1.2" aria-pressed="false"><span>BCI</span></button>
+        <button type="button" class="research-node" data-label="ML" data-text="Statistical and machine-learning tools for biomedical data." style="left:46%;top:74%;--node-scale:.95" aria-pressed="false"><span>ML</span></button>
+        <button type="button" class="research-node" data-label="Biomedical tech" data-text="The engineering and clinical foundation behind the work." style="left:14%;top:72%;--node-scale:.9" aria-pressed="false"><span>Biomedical tech</span></button>
+        <button type="button" class="research-node" data-label="Product" data-text="Research that can become useful biomedical technology." style="left:48%;top:45%;--node-scale:.82" aria-pressed="false"><span>Product</span></button>
+      </div>
+    </section>
+
+    <section id="about" class="about-section"><div class="about-left portrait-about"><img src="assets/diana-alves.png" alt="Diana Alves working on a laptop" class="about-portrait" /><span class="giant-quote">“</span><p>Understand the system.<br />Model the signal.<br /><em>Build something useful.</em></p></div><div class="about-right"><div class="section-kicker">About / direction</div><h2>Biomedical foundation.<br />Computational direction.</h2><p>I am studying Biomedical Technology at the Polytechnic Institute of Setúbal and progressively building the mathematical, programming and data-analysis foundation needed for computational neuroscience.</p><p>I am especially drawn to neural population dynamics, motor behaviour and the idea of translating research into technologies that are genuinely useful.</p><div class="now-grid"><div><span>NOW</span><strong>Python · statistics · reproducible projects</strong></div><div><span>NEXT</span><strong>public neural datasets · decoding benchmarks</strong></div><div><span>LATER</span><strong>research lab · neurotechnology · product</strong></div></div></div></section>
+
+    <section class="closing-section"><div class="closing-stamp">OPEN TO LEARNING / RESEARCH / COLLABORATION</div><h2>Let the work<br /><em>be findable.</em></h2><div class="closing-links"><a href="https://github.com/dianaalves397" target="_blank" rel="noreferrer">GitHub ↗</a><a href="#top">Back to top ↑</a></div><div class="closing-meta">Diana Alves · Portugal · Biomedical Technology × Computational Neuroscience</div></section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

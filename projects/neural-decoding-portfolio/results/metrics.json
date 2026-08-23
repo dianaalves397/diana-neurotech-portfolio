@@ -1,0 +1,14 @@
+{
+  "dataset": "synthetic direction-tuned neural population",
+  "n_trials": 800,
+  "n_neurons": 40,
+  "test_accuracy": 0.845,
+  "cv_accuracy_mean": 0.8962499999999999,
+  "cv_accuracy_std": 0.01658312395177699,
+  "classes_degrees": [
+    0,
+    90,
+    180,
+    270
+  ]
+}

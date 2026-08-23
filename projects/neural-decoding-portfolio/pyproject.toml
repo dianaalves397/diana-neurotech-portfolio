@@ -1,0 +1,9 @@
+[project]
+name = "neural-decoding-portfolio"
+version = "0.1.0"
+description = "A transparent beginner neural-decoding project using synthetic population activity."
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

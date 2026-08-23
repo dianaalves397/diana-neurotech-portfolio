@@ -1,0 +1,72 @@
+diff --git a/emg2mu/detection/duplicate_detection.py b/emg2mu/detection/duplicate_detection.py
+--- a/emg2mu/detection/duplicate_detection.py
++++ b/emg2mu/detection/duplicate_detection.py
+@@ -138,16 +138,27 @@ def remove_duplicates(spike_train, source, sampling_frequency, min_firing_rate=4,
+     upper_bound_cond = np.where(firings < max_firing_rate * time_stamp[-1])[0]
+     plausible_firings = np.intersect1d(lower_bound_cond, upper_bound_cond)
+ 
+-    # Remove spikes that are too close together
++    # Remove spikes that are too close together. Recompute the spike indices
++    # after every removal so runs of 3+ close spikes are handled correctly.
+     for k in plausible_firings:
+-        spike_time_diff = np.diff(time_stamp[spike_train[:, k] == 1])
+-        for t in range(len(spike_time_diff)):
+-            if spike_time_diff[t] < min_firing_interval:
+-                if source[t, k] < source[t + 1, k]:
+-                    spike_train[t, k] = 0
+-                else:
+-                    spike_train[t + 1, k] = 0
++        while True:
++            spike_indices = np.flatnonzero(spike_train[:, k] == 1)
++            if len(spike_indices) < 2:
++                break
++
++            spike_time_diff = np.diff(time_stamp[spike_indices])
++            close_pairs = np.flatnonzero(spike_time_diff < min_firing_interval)
++            if len(close_pairs) == 0:
++                break
++
++            t = close_pairs[0]
++            current_idx = spike_indices[t]
++            next_idx = spike_indices[t + 1]
++            if source[current_idx, k] < source[next_idx, k]:
++                spike_train[current_idx, k] = 0
++            else:
++                spike_train[next_idx, k] = 0
+ 
+     # Find duplicate sources
+     duplicate_sources = []
+     for k in plausible_firings:
+diff --git a/emg2mu/tests/test_duplicate_detection.py b/emg2mu/tests/test_duplicate_detection.py
+new file mode 100644
+--- /dev/null
++++ b/emg2mu/tests/test_duplicate_detection.py
+@@ -0,0 +1,28 @@
++import numpy as np
++import numpy.testing as npt
++
++from emg2mu.detection.duplicate_detection import remove_duplicates
++
++
++def test_remove_duplicates_handles_consecutive_close_spikes():
++    """Close-spike cleanup should use real sample indices and re-check after removal."""
++    spike_train = np.zeros((1000, 1), dtype=int)
++    spike_train[[100, 110, 120, 500, 800], 0] = 1
++
++    source = np.zeros((1000, 1), dtype=float)
++    source[100, 0] = 0.4
++    source[110, 0] = 0.9
++    source[120, 0] = 0.2
++    source[500, 0] = 0.8
++    source[800, 0] = 0.7
++
++    cleaned, _, good_idx = remove_duplicates(
++        spike_train,
++        source,
++        sampling_frequency=1000,
++        min_firing_rate=1,
++        max_firing_rate=35,
++    )
++
++    npt.assert_array_equal(np.flatnonzero(cleaned[:, 0]), [110, 500, 800])
++    npt.assert_array_equal(good_idx, [0])
