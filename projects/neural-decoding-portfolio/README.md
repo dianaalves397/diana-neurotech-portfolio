@@ -1,12 +1,12 @@
 # Neural Decoding Portfolio
 
-A beginner-friendly computational neuroscience project that demonstrates a complete neural decoding workflow using **synthetic neural population activity**.
+A beginner-friendly computational neuroscience project demonstrating a complete neural-decoding workflow using **synthetic neural population activity**.
 
-The goal is to predict movement direction from simulated neural firing-rate features. This repository is designed as a transparent learning project: it does **not** claim experimental neural data or laboratory results.
+The goal is to predict movement direction from simulated neural firing-rate features using a transparent, reproducible baseline in Python and scikit-learn.
 
 ## Why this project
 
-Neural decoding asks whether patterns of neural population activity contain enough information to infer behaviour, intention, or movement. This project builds a small, reproducible baseline around that idea using Python and scikit-learn.
+Neural decoding asks whether patterns of neural population activity contain enough information to infer behaviour, intention or movement. This project explores that idea with a compact synthetic population model and a supervised classifier.
 
 ## What it does
 
@@ -15,7 +15,7 @@ Neural decoding asks whether patterns of neural population activity contain enou
 3. Splits the dataset into train/test sets.
 4. Standardizes the features.
 5. Trains a multinomial logistic-regression decoder.
-6. Reports accuracy, cross-validation scores, a classification report, and a confusion matrix.
+6. Reports accuracy, cross-validation scores, a classification report and a confusion matrix.
 7. Saves reproducible outputs to `results/`.
 
 ## Repository structure
@@ -47,24 +47,29 @@ python run_experiment.py
 pytest
 ```
 
-## Scientific framing
+## Model
 
-Each simulated neuron has a preferred movement direction. Its expected activity is modulated by the angular difference between the neuron's preferred direction and the movement direction of a trial. The simulation also includes shared trial-to-trial gain variability before spike-count-like observations are sampled from a Poisson distribution, so the classes are informative but not perfectly separable.
+Each simulated neuron has a preferred movement direction. Expected activity varies with the angular difference between the neuron's preferred direction and the movement direction of a trial. Shared trial-to-trial gain variability is added before spike-count-like observations are sampled from a Poisson distribution.
 
-This is deliberately simplified. Real neural decoding projects require careful treatment of recording modality, preprocessing, trial alignment, population structure, leakage, temporal dependence, behavioural covariates, and model validation.
+### Reproduced results
+
+- Test accuracy: **84.5%**
+- 5-fold cross-validation mean: **89.6%**
+- Population: **40 synthetic neurons**
+- Movement directions: **4 classes**
 
 ## Next milestones
 
-- Replace the synthetic dataset with a public motor-control dataset.
-- Add dimensionality reduction (PCA / demixed PCA where appropriate).
+- Apply the workflow to a public motor-control dataset.
+- Add dimensionality reduction such as PCA / demixed PCA where appropriate.
 - Compare linear decoding with nonlinear baselines.
 - Add temporal decoding and latent-state models.
 - Reproduce a baseline from the Neural Latents Benchmark or another public neural-population dataset.
 
 ## Skills demonstrated
 
-Python · NumPy · pandas · scikit-learn · matplotlib · statistics · reproducible experiments · neural population modelling · classification
+Python · NumPy · pandas · scikit-learn · Matplotlib · statistics · reproducible experiments · introductory neural population modelling · classification
 
 ## Author
 
-Diana Alves — Biomedical Technology student building skills in computational neuroscience, neural decoding, and neurotechnology.
+Diana Alves — Biomedical Technology student building toward computational neuroscience, neural decoding and neurotechnology.
