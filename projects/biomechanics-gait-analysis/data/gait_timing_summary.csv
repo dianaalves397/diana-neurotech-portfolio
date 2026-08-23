@@ -1,0 +1,7 @@
+condition,side,support_s,stride_s,swing_s,support_percent,swing_percent
+walking,left,0.77,1.27,0.51,60.28,39.72
+walking,right,0.77,1.27,0.50,60.88,39.12
+running,left,0.28,0.69,0.41,40.90,59.10
+running,right,0.26,0.69,0.42,38.41,61.59
+sprint,left,0.23,0.63,0.41,36.05,63.95
+sprint,right,0.21,0.64,0.42,33.27,66.73
