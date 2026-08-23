@@ -16,6 +16,8 @@ The current version is a cleaned and expanded version of the coursework code, pr
 | [`src/stats.py`](src/stats.py) | Descriptive statistics, grouped analysis, correlations and figures |
 | [`tests/test_analysis.py`](tests/test_analysis.py) | Automated checks for the core analysis functions |
 
+**→ [Browse all Python source code](src/)**
+
 ## What the analysis does
 
 - validates the expected biomedical-data columns;
@@ -34,7 +36,7 @@ The supplied coursework CSV contains **18,500 observations and 9 variables**:
 
 `gender` · `age` · `hypertension` · `heart_disease` · `smoking_history` · `bmi` · `HbA1c_level` · `blood_glucose_level` · `diabetes`
 
-After duplicate removal and the gender comparison used in the coursework analysis, the reproducible run contains **18,418 observations**.
+After cleaning, the reproducible run contains **18,418 observations**.
 
 Reference dataset with the same schema: [Diabetes Prediction Dataset — Kaggle](https://www.kaggle.com/datasets/iammustafatz/diabetes-prediction-dataset).
 
@@ -49,14 +51,12 @@ Reference dataset with the same schema: [Diabetes Prediction Dataset — Kaggle]
 
 In this coursework dataset, the strongest Pearson correlations with diabetes status among the numeric variables are **HbA1c (r = 0.600)**, **blood glucose (r = 0.548)** and **age (r = 0.473)**.
 
-## Visual analysis
+Generated tables are published in [`results/`](results):
 
-<p align="center">
-  <img src="figures/hba1c_by_diabetes.png" width="47%" alt="HbA1c by diabetes status" />
-  <img src="figures/age_bmi_diabetes.png" width="47%" alt="Age and BMI by diabetes status" />
-</p>
-
-Additional figures are available in [`figures/`](figures), and the generated tables are in [`results/`](results).
+- [`descriptive_summary.csv`](results/descriptive_summary.csv)
+- [`diabetes_group_summary.csv`](results/diabetes_group_summary.csv)
+- [`class_balance.csv`](results/class_balance.csv)
+- [`correlation_matrix.csv`](results/correlation_matrix.csv)
 
 ## Run
 
@@ -65,26 +65,7 @@ python -m pip install -r requirements.txt
 python src/main.py --data data/diabetes.csv
 ```
 
-The analysis writes:
-
-```text
-results/
-├── class_balance.csv
-├── correlation_matrix.csv
-├── descriptive_summary.csv
-└── diabetes_group_summary.csv
-
-figures/
-├── age_distribution.png
-├── bmi_distribution.png
-├── smoking_history.png
-├── bmi_by_diabetes.png
-├── hba1c_by_diabetes.png
-├── glucose_by_diabetes.png
-├── gender_by_diabetes.png
-├── age_bmi_diabetes.png
-└── gender_bmi_diabetes.png
-```
+Running the analysis also generates the full set of histograms, boxplots, grouped charts and multivariate figures in `figures/`.
 
 ## Tests
 
