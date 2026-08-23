@@ -1,0 +1,7 @@
+condition,side,mean_velocity_m_s,mean_acceleration_m_s2
+walking,left,0.91,9.36
+walking,right,1.03,37.72
+running,left,2.13,26.60
+running,right,2.15,27.50
+sprint,left,2.77,40.56
+sprint,right,2.79,40.76
