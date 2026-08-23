@@ -1,9 +1,6 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "alias": [
-    "diana-biomedical-technology-portfolio.vercel.app"
-  ],
   "headers": [
     {
       "source": "/(.*)",
