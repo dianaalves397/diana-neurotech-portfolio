@@ -53,7 +53,7 @@ My academic knowledge spans biomedical systems, electronics, instrumentation, st
 | Programming & biomedical data | Python, NumPy, pandas, scikit-learn, Matplotlib, exploratory data analysis and file/data processing |
 | Biomechanics & human movement | Qualisys motion capture, 3D marker trajectories, knee-angle calculation, force-platform gait timing, symmetry and variability analysis |
 | Biomedical CAD / product design | Autodesk Fusion assembly work, mechanical component integration and a gait-assistance design concept |
-| Biomedical information systems | Team-based conceptual modelling, relational-data documentation and introductory Power BI work |
+| Biomedical information systems | Relational modelling, MySQL project architecture, Python/pandas/SQLAlchemy ETL and Power BI analysis in team coursework |
 | Engineering practice | Git/GitHub, debugging, regression testing, pytest, critical interpretation and reproducible computational experiments |
 | Web | HTML, CSS and JavaScript used to build this editorial portfolio |
 
@@ -123,27 +123,57 @@ The prepared contribution identifies incorrect indexing of spike events, recompu
 
 ### Biomechanics Gait Analysis
 
-Quantitative walking/running/sprint analysis using **Qualisys motion capture** and force-platform data. The project covers 3D lower-limb marker trajectories, knee flexion from vector geometry, gait timing, right/left symmetry, variability and critical interpretation of experimental artefacts.
+A full walking/running/sprint laboratory analysis using **Qualisys motion capture**, 3D lower-limb markers and force-platform data. The project includes the actual equations, aggregated experimental tables and derived visualisations.
 
-[**→ Open the gait-analysis project**](projects/biomechanics-gait-analysis)
+<p align="center">
+  <img src="projects/biomechanics-gait-analysis/results/knee-flexion.svg" width="700" alt="Biomechanics project knee-flexion results" />
+</p>
+
+Key outputs include knee-flexion profiles, GT/ELF/ML trajectories, support/no-contact timing, step/stride timing, symmetry index, coefficient of variation and marker velocity/acceleration.
+
+[**→ Open the full gait-analysis project**](projects/biomechanics-gait-analysis) · [**→ Results**](projects/biomechanics-gait-analysis/docs/results.md) · [**→ Data tables**](projects/biomechanics-gait-analysis/data)
 
 ### Gait Trainer — CAD Assembly
 
 A biomedical product-design project developed in **Autodesk Fusion**, with an assembly-level gait-assistance concept, mechanical components, casters, fasteners and an Arduino-related enclosure.
 
+<p align="center">
+  <img src="projects/gait-trainer-cad/fusion-preview.png" width="620" alt="Autodesk Fusion gait trainer assembly" />
+</p>
+
 [**→ Open the CAD project**](projects/gait-trainer-cad) · [**→ Open/download the Fusion `.f3z` project**](https://drive.google.com/file/d/1bwisNnG-afc3zUxBcT_GuxmCJDgMlcfR/view?usp=drivesdk)
 
 ### Diabetes Data Explorer
 
-Exploratory biomedical-data coursework using **Python and pandas** for data inspection, preprocessing, descriptive summaries, univariate/bivariate/multivariate exploration and visualisation.
+A modular Python biomedical-data project using **pandas, NumPy and Matplotlib**. The repository includes the full source code, preprocessing, statistics, generated result tables and tests.
 
-[**→ Open the data-analysis project**](projects/diabetes-data-explorer)
+```text
+src/
+├── main.py
+├── utils.py
+├── preprocessing.py
+└── stats.py
+```
+
+[**→ Open the Diabetes project**](projects/diabetes-data-explorer) · [**→ Browse the Python source**](projects/diabetes-data-explorer/src) · [**→ Results**](projects/diabetes-data-explorer/results)
 
 ### Prosthesis Data Management System
 
-A **team** biomedical-information-system project covering conceptual data modelling, prosthesis-management workflows and dashboard design. My documented contribution focused on **technical documentation/reporting**, the **conceptual diagram** and **Power BI**.
+A relational biomedical-information-system project connecting **patients, physicians, technicians, laboratories, prostheses, examinations, consultations, medical problems and medical equipment**.
 
-[**→ Open the team project**](projects/prosthesis-data-management)
+The project now exposes its actual architecture and analysis artefacts:
+
+```text
+prosthesis-data-management/
+├── data-model.md
+├── schema.sql
+├── etl_example.py
+└── powerbi-results.md
+```
+
+It covers ER modelling, primary/foreign keys, many-to-many bridge tables, data cleaning, Python/pandas/SQLAlchemy loading into MySQL and analytical Power BI views.
+
+[**→ Open the full database project**](projects/prosthesis-data-management) · [**→ ER model**](projects/prosthesis-data-management/data-model.md) · [**→ SQL schema**](projects/prosthesis-data-management/schema.sql) · [**→ Power BI results**](projects/prosthesis-data-management/powerbi-results.md)
 
 ---
 

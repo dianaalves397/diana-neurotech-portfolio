@@ -2,32 +2,91 @@
 
 **Team coursework project · Databases & Information Analysis · 2025/26**
 
-A relational information-system concept for managing prostheses in a healthcare setting, covering patients, clinicians, technicians, laboratories, examinations, consultations, medical equipment, medical problems and prostheses.
+A relational information system designed for **prosthesis management in a healthcare, clinic or rehabilitation setting**. The project connects patients, clinicians, technicians, laboratories, prostheses, examinations, consultations, medical problems and medical equipment in one structured data model.
 
-## Team project scope
+The objective was to centralise information, reduce redundancy, preserve referential integrity and make the data useful for both operational queries and analytical dashboards.
 
-The project included:
+## System architecture
 
-- entity–relationship modelling
-- relational schema design and integrity constraints
-- MySQL / MySQL Workbench implementation
-- a Python / pandas / SQLAlchemy ETL workflow
-- Power BI dashboards for patients, clinicians, prostheses and consultations
+```text
+Source data
+   ↓
+Python / pandas cleaning
+   ↓
+Relational modelling
+   ↓
+MySQL database
+   ↓
+SQL queries / structured records
+   ↓
+Power BI analysis
+```
 
-## My contribution
+## Relational model
 
-My documented contribution focused primarily on **technical documentation and report development**, with additional work on the **conceptual diagram** and **Power BI**.
+The database includes the main entities:
 
-This project contributes practical experience in **biomedical information modelling, technical communication, team-based database design and introductory dashboard development**.
+`Patient` · `Physician` · `Technician` · `Laboratory` · `Prosthesis` · `Examination` · `Consultation` · `Medical Problem` · `Medical Equipment`
 
-## Data model
+It also uses associative tables to represent many-to-many relationships such as technicians working on prostheses, technicians responsible for equipment and patients linked to multiple medical problems.
 
-The model includes entities for Patient, Physician, Technician, Laboratory, Examination, Consultation, Medical Equipment, Prosthesis and Medical Problem, with associative structures for many-to-many relationships.
+[**→ Open the full data model and ER relationships**](data-model.md)  
+[**→ Inspect the SQL schema**](schema.sql)
 
-## Dashboard design
+### Example relationships
 
-The Power BI work covered patient distributions, geographic views, physician workload, prosthesis type/material and consultation activity.
+- one physician → many consultations
+- one patient → many consultations and examinations
+- one laboratory → many prostheses and examinations
+- many technicians ↔ many prostheses via `protese_tecnico`
+- many technicians ↔ many devices via `tecnico_equipamento`
+- many patients ↔ many medical problems via `paciente_problema`
 
-## Related knowledge
+The model was developed around primary keys, foreign keys, cardinalities, integrity constraints and normalization concepts used in relational database design.
 
-`Relational databases` · `Entity–relationship modelling` · `Normalization` · `SQL` · `Information modelling` · `Power BI` · `Technical documentation`
+## Data preparation and ETL
+
+The project used a hybrid dataset strategy: technical/catalogue information was researched from real-world sources while patient/history records were generated synthetically to avoid exposing real health data.
+
+Before import, the workflow included:
+
+- duplicate removal;
+- missing-value checks;
+- category standardisation for fields such as materials and locations;
+- alignment of CSV column names with the logical database model;
+- mapping of dates and numeric values to database-compatible types;
+- programmatic loading into MySQL using **Python, pandas and SQLAlchemy**.
+
+[**→ Open the ETL example**](etl_example.py)
+
+## Power BI analysis
+
+The database was then explored through dashboards covering:
+
+- patient distribution by sex;
+- prosthesis type and material;
+- geographic patient distribution;
+- laboratory locations;
+- patients per physician;
+- consultations over time;
+- consultations per physician;
+- patient age groups.
+
+Selected reported values include **113 female and 87 male patients**, while the prosthesis-type view included **29 dental crowns, 28 dental implants, 25 total prostheses and 18 partial prostheses**.
+
+[**→ See the documented dashboard outputs and analysis**](powerbi-results.md)
+
+## Repository contents
+
+```text
+prosthesis-data-management/
+├── README.md
+├── data-model.md        # ER structure and relationship map
+├── schema.sql           # relational schema
+├── etl_example.py       # Python/pandas/SQLAlchemy loading pattern
+└── powerbi-results.md   # dashboard views and reported results
+```
+
+## Tools & concepts
+
+`MySQL` · `MySQL Workbench` · `SQL` · `Python` · `pandas` · `SQLAlchemy` · `Power BI` · `ER modelling` · `normalization` · `primary/foreign keys` · `referential integrity` · `ETL` · `biomedical information systems`
