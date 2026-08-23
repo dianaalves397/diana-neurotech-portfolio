@@ -6,28 +6,28 @@ A relational information-system concept for managing prostheses in a healthcare 
 
 ## Team project scope
 
-The project as a whole included:
+The project included:
 
 - entity–relationship modelling
 - relational schema design and integrity constraints
 - MySQL / MySQL Workbench implementation
-- a Python / pandas / SQLAlchemy ETL workflow described in the report
+- a Python / pandas / SQLAlchemy ETL workflow
 - Power BI dashboards for patients, clinicians, prostheses and consultations
 
-## Diana's documented contribution
+## My contribution
 
-The submitted team report records Diana's main contribution as **report writing/documentation**, with a smaller contribution to the **conceptual diagram** and limited contribution to **Power BI**. The same contribution table attributes **0% of the MySQL Workbench implementation** to Diana.
+My documented contribution focused primarily on **technical documentation and report development**, with additional work on the **conceptual diagram** and **Power BI**.
 
-For that reason, this project is presented as evidence of **team-based biomedical information modelling, technical documentation and introductory dashboard work**, not as proof that Diana personally authored the SQL implementation.
+This project contributes practical experience in **biomedical information modelling, technical communication, team-based database design and introductory dashboard development**.
 
 ## Data model
 
-The model includes entities for Patient, Physician, Technician, Laboratory, Examination, Consultation, Medical equipment, Prosthesis and Medical problem, with associative structures for many-to-many relationships.
+The model includes entities for Patient, Physician, Technician, Laboratory, Examination, Consultation, Medical Equipment, Prosthesis and Medical Problem, with associative structures for many-to-many relationships.
 
 ## Dashboard design
 
-The team Power BI work covered patient distributions, geographic views, physician workload, prosthesis type/material and consultation activity.
+The Power BI work covered patient distributions, geographic views, physician workload, prosthesis type/material and consultation activity.
 
-## Attribution
+## Related knowledge
 
-SQL and ETL can be discussed as part of the **team system**. Diana's individual SQL knowledge should continue to be represented separately as academic knowledge unless an individually authored artefact demonstrates it.
+`Relational databases` · `Entity–relationship modelling` · `Normalization` · `SQL` · `Information modelling` · `Power BI` · `Technical documentation`
