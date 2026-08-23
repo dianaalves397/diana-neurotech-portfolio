@@ -113,6 +113,7 @@
     card.addEventListener('pointerleave', () => { card.style.transform = ''; });
   });
 
+  const status = document.getElementById('activeNodeStatus');
   const label = document.getElementById('activeNodeLabel');
   const text = document.getElementById('activeNodeText');
   const researchNodes = Array.from(document.querySelectorAll('.research-node'));
@@ -124,6 +125,7 @@
       });
       node.classList.add('active');
       node.setAttribute('aria-pressed', 'true');
+      if (status) status.textContent = node.getAttribute('data-status') || '';
       if (label) label.textContent = node.getAttribute('data-label') || '';
       if (text) text.textContent = node.getAttribute('data-text') || '';
     });
