@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+  <rect width="900" height="520" fill="#f3efe7"/>
+  <text x="54" y="58" font-family="Georgia, serif" font-size="30" fill="#171513">Ground-contact time</text>
+  <text x="54" y="86" font-family="Arial, sans-serif" font-size="13" fill="#726b63">support duration estimated from vertical GRF with a 50 N threshold</text>
+  <line x1="95" y1="420" x2="840" y2="420" stroke="#9a9288"/>
+  <line x1="95" y1="120" x2="95" y2="420" stroke="#9a9288"/>
+  <g font-family="Arial, sans-serif" font-size="12" fill="#726b63">
+    <text x="52" y="424">0.0</text><text x="52" y="349">0.2</text><text x="52" y="274">0.4</text><text x="52" y="199">0.6</text><text x="52" y="124">0.8 s</text>
+    <text x="165" y="455">Walking</text><text x="390" y="455">Running</text><text x="615" y="455">Sprint</text>
+  </g>
+  <g fill="#60685d"><rect x="160" y="131" width="70" height="289"/><rect x="385" y="315" width="70" height="105"/><rect x="610" y="334" width="70" height="86"/></g>
+  <g fill="#4b3328"><rect x="240" y="131" width="70" height="289"/><rect x="465" y="323" width="70" height="97"/><rect x="690" y="341" width="70" height="79"/></g>
+  <g font-family="Arial, sans-serif" font-size="13" fill="#171513">
+    <text x="176" y="122">0.77 s</text><text x="256" y="122">0.77 s</text>
+    <text x="401" y="306">0.28 s</text><text x="481" y="314">0.26 s</text>
+    <text x="626" y="325">0.23 s</text><text x="706" y="332">0.21 s</text>
+  </g>
+  <rect x="650" y="42" width="14" height="14" fill="#60685d"/><text x="672" y="54" font-family="Arial" font-size="12" fill="#171513">Left</text>
+  <rect x="730" y="42" width="14" height="14" fill="#4b3328"/><text x="752" y="54" font-family="Arial" font-size="12" fill="#171513">Right</text>
+</svg>
