@@ -72,4 +72,5 @@ Python · NumPy · pandas · scikit-learn · Matplotlib · statistics · reprodu
 
 ## Author
 
-Diana Alves — Biomedical Technology student building toward computational neuroscience, neural decoding and neurotechnology.
+**Diana Alves** — Biomedical Technology student building toward computational neuroscience, neural decoding and neurotechnology.  
+ORCID: [0009-0008-1557-2729](https://orcid.org/0009-0008-1557-2729)
