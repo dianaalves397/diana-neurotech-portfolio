@@ -16,7 +16,13 @@ The supplied assembly metadata identifies a root design named **“versao atuali
 
 ## Source artefact
 
-The original `gait-trainer.f3z` exists in the coursework archive but is not yet committed here because the current connector path only supports text-file writes. It can be added later through a binary upload without changing this project framing.
+The original Autodesk Fusion source package has been preserved as:
+
+**`Diana-Alves-Gait-Trainer.f3z`**
+
+[Open the source CAD package backup →](https://drive.google.com/file/d/1Qi6N1p-bZFk50fc3d3b5vZjEeWVpCU1p/view?usp=drivesdk)
+
+The `.f3z` file is the original coursework design package. The current GitHub connector can write the project documentation but does not support direct binary-file commits, so the source package is currently preserved externally rather than encoded or altered. It should be moved into this project directory as a native binary artifact when a binary Git upload path is available.
 
 ## Scope note
 
