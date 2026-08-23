@@ -21,15 +21,15 @@ Portugal 🇵🇹
 
 ## 🚀 About me
 
-I am completing a degree in **Biomedical Technology at ESTSetúbal, Polytechnic Institute of Setúbal**, building at the intersection of biomedical engineering, data and computational neuroscience.
+I am completing a degree in **Biomedical Technology at ESTSetúbal, Polytechnic Institute of Setúbal**, working across biomedical engineering, data and computational neuroscience.
 
-My academic knowledge spans biomedical systems, electronics, data and life sciences. I am progressively directing that multidisciplinary base toward **computational neuroscience, neural decoding, computational motor control and neurotechnology**.
+My academic knowledge spans biomedical systems, electronics, instrumentation, statistics, databases, biomechanics, biomaterials, medical devices and life sciences. My current direction is **computational neuroscience, neural decoding, computational motor control and neurotechnology**.
 
 - 🧠 Building reproducible projects around **neural decoding**
 - 🦾 Interested in **motor control, BCI and neuroprosthetics**
 - 📊 Working across **Python, statistics, biomedical data analysis and machine learning**
 - 🧪 Applying coursework in **biomechanics, biomedical product design and information systems**
-- 🔬 Moving from synthetic experiments toward **public neural datasets**
+- 🔬 Progressing toward **public neural datasets and stronger decoding baselines**
 
 ### ✦ Current focus
 
@@ -45,8 +45,6 @@ My academic knowledge spans biomedical systems, electronics, data and life scien
 
 ### Demonstrated through projects
 
-Evidence from the projects and source material in this repository:
-
 | Area | Demonstrated work |
 | --- | --- |
 | Neural decoding | Introductory synthetic neural population modelling and motor-intention classification |
@@ -55,13 +53,13 @@ Evidence from the projects and source material in this repository:
 | Programming & biomedical data | Python, NumPy, pandas, scikit-learn, Matplotlib, exploratory data analysis and file/data processing |
 | Biomechanics & human movement | Qualisys motion capture, 3D marker trajectories, knee-angle calculation, force-platform gait timing, symmetry and variability analysis |
 | Biomedical CAD / product design | Autodesk Fusion assembly work, mechanical component integration and a gait-assistance design concept |
-| Biomedical information systems | Team-based conceptual modelling, relational-data documentation and introductory Power BI work, with attribution kept explicit |
+| Biomedical information systems | Team-based conceptual modelling, relational-data documentation and introductory Power BI work |
 | Engineering practice | Git/GitHub, debugging, regression testing, pytest, critical interpretation and reproducible computational experiments |
 | Web | HTML, CSS and JavaScript used to build this editorial portfolio |
 
 ### Academic knowledge
 
-These are competencies studied and applied in the multidisciplinary **Biomedical Technology** degree through coursework, projects and laboratory work. They are real academic knowledge, presented without implying professional experience, advanced specialization or research-laboratory employment.
+Competencies studied and applied through **Biomedical Technology** coursework, projects and laboratory work:
 
 | Area | Academic knowledge |
 | --- | --- |
@@ -75,7 +73,7 @@ These are competencies studied and applied in the multidisciplinary **Biomedical
 | Medical Product Development | Needs, requirements and specifications; concept generation and selection, product architecture, prototyping, technical drawing, CAD/3D-modelling fundamentals and prosthesis, orthosis, implant and rehabilitation-device design contexts |
 | Digital Health | Digital-health fundamentals, telemedicine, health information technologies and remote-healthcare concepts |
 
-The interactive [portfolio](https://diana-neurotech-portfolio.vercel.app#capabilities) presents this as a capability atlas rather than a skill wall.
+[**→ Explore the interactive capability atlas**](https://diana-neurotech-portfolio.vercel.app#capabilities)
 
 ---
 
@@ -85,7 +83,7 @@ The interactive [portfolio](https://diana-neurotech-portfolio.vercel.app#capabil
 <tr>
 <td width="58%" valign="top">
 
-A reproducible introductory neural-decoding pipeline using **synthetic direction-tuned neural population activity**—not experimental or clinical recordings.
+A reproducible introductory neural-decoding pipeline using **synthetic direction-tuned neural population activity**.
 
 It simulates 40 neurons, generates spike-count-like observations, standardizes the features and trains a logistic-regression decoder to predict movement direction.
 
@@ -107,8 +105,6 @@ It simulates 40 neurons, generates spike-count-like observations, standardizes t
 </tr>
 </table>
 
-**Important scientific framing:** this is a learning project using synthetic data. It does not claim experimental neural recordings or laboratory results.
-
 ---
 
 ## 🔧 Open-source work — `emg2mu` issue #16
@@ -117,15 +113,13 @@ I investigated a `good first issue` in the open-source **emg2mu** project concer
 
 The prepared contribution identifies incorrect indexing of spike events, recomputes close-spike pairs after each removal and includes a regression fixture for consecutive close spikes.
 
-**Status:** prepared and locally regression-tested; **not yet submitted upstream**.
+**Status:** prepared and locally regression-tested · upstream submission pending.
 
 [**→ Open my contribution notes and patch**](projects/emg2mu-issue-16) · [**→ Upstream issue**](https://github.com/neuromechanist/emg2mu/issues/16)
 
 ---
 
 ## 🧪 Selected Biomedical Technology coursework
-
-These entries preserve the distinction between **individual evidence**, **team coursework** and **academic knowledge**.
 
 ### Biomechanics Gait Analysis
 
@@ -135,19 +129,19 @@ Quantitative walking/running/sprint analysis using **Qualisys motion capture** a
 
 ### Gait Trainer — CAD Assembly
 
-A biomedical product-design coursework artefact built in **Autodesk Fusion**, documenting an assembly-level gait-assistance concept with mechanical components and an Arduino-related enclosure. It is presented as CAD/project evidence, not as a clinically validated device.
+A biomedical product-design project developed in **Autodesk Fusion**, with an assembly-level gait-assistance concept, mechanical components, casters, fasteners and an Arduino-related enclosure.
 
-[**→ Open the CAD project**](projects/gait-trainer-cad)
+[**→ Open the CAD project**](projects/gait-trainer-cad) · [**→ Open/download the Fusion `.f3z` project**](https://drive.google.com/file/d/1bwisNnG-afc3zUxBcT_GuxmCJDgMlcfR/view?usp=drivesdk)
 
 ### Diabetes Data Explorer
 
-Exploratory biomedical-data coursework using **Python and pandas** for data inspection, preprocessing, descriptive summaries, univariate/bivariate/multivariate exploration and visualisation. The dataset itself is intentionally not bundled until its precise provenance and reuse terms are confirmed.
+Exploratory biomedical-data coursework using **Python and pandas** for data inspection, preprocessing, descriptive summaries, univariate/bivariate/multivariate exploration and visualisation.
 
 [**→ Open the data-analysis project**](projects/diabetes-data-explorer)
 
 ### Prosthesis Data Management System
 
-A **team** biomedical-information-system project covering conceptual data modelling, prosthesis-management workflows and dashboard design. The submitted contribution record identifies my main contribution as technical documentation/reporting, with smaller contributions to the conceptual diagram and Power BI; it does **not** attribute the MySQL Workbench implementation to me.
+A **team** biomedical-information-system project covering conceptual data modelling, prosthesis-management workflows and dashboard design. My documented contribution focused on **technical documentation/reporting**, the **conceptual diagram** and **Power BI**.
 
 [**→ Open the team project**](projects/prosthesis-data-management)
 
@@ -155,7 +149,7 @@ A **team** biomedical-information-system project covering conceptual data modell
 
 ## 🌐 Interactive portfolio
 
-The same work is presented as a **Cosmos-inspired editorial visual archive**: image-first, asymmetric and intentionally more like a curated research collection than a conventional developer dashboard.
+The same work is presented as a **Cosmos-inspired editorial visual archive**: image-first, asymmetric and curated around projects, methods and biomedical capabilities.
 
 <p align="center">
   <a href="https://diana-neurotech-portfolio.vercel.app">
@@ -163,7 +157,7 @@ The same work is presented as a **Cosmos-inspired editorial visual archive**: im
   </a>
 </p>
 
-The website source is in the root of this repository (`index.html`, `style.css`, `script.js`) so this repository is also the source connected to Vercel.
+The website source is in the root of this repository (`index.html`, `style.css`, `script.js`) and deploys through Vercel.
 
 ---
 
@@ -190,4 +184,4 @@ Public neural datasets + stronger ML baselines
 Neurotechnology + biomedical innovation
 ```
 
-<p align="center"><sub>Build carefully · document honestly · make the work findable.</sub></p>
+<p align="center"><sub>Build carefully · document clearly · make the work findable.</sub></p>
