@@ -19,6 +19,7 @@ def diabetes_group_summary(data: pd.DataFrame) -> pd.DataFrame:
         .agg(["min", "max", "mean", "median", "std"])
         .round(2)
     )
+    summary.columns = [f"{variable}_{statistic}" for variable, statistic in summary.columns]
     summary["cases"] = data.groupby("diabetes").size()
     return summary
 
