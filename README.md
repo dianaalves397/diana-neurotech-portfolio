@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/readme-banner.svg" width="100%" alt="Diana Alves — Biomedical Technology and Computational Neuroscience" />
+  <img src="assets/readme-banner.svg" width="100%" alt="Diana Alves — Biomedical Technology Portfolio" />
 </p>
 
 <table>
@@ -13,7 +13,8 @@
 **Biomedical Technology student**<br />
 Portugal 🇵🇹
 
-[![Portfolio](https://img.shields.io/badge/PORTFOLIO-diana--neurotech-111111?style=for-the-badge&labelColor=111111&color=ff4fa3)](https://diana-neurotech-portfolio.vercel.app)
+[![Portfolio](https://img.shields.io/badge/PORTFOLIO-biomedical--technology-111111?style=for-the-badge&labelColor=111111&color=ff4fa3)](https://diana-neurotech-portfolio.vercel.app)
+[![ORCID](https://img.shields.io/badge/ORCID-0009--0008--1557--2729-A6CE39?style=for-the-badge&logo=orcid&logoColor=white)](https://orcid.org/0009-0008-1557-2729)
 [![GitHub](https://img.shields.io/badge/GITHUB-dianaalves397-111111?style=for-the-badge&logo=github&logoColor=white&labelColor=111111&color=8b5cf6)](https://github.com/dianaalves397)
 
 </td>
@@ -23,17 +24,17 @@ Portugal 🇵🇹
 
 I am completing a degree in **Biomedical Technology at ESTSetúbal, Polytechnic Institute of Setúbal**, working across biomedical engineering, data and computational neuroscience.
 
-My academic knowledge spans biomedical systems, electronics, instrumentation, statistics, databases, biomechanics, biomaterials, medical devices and life sciences. My current direction is **computational neuroscience, neural decoding, computational motor control and neurotechnology**.
+My academic knowledge spans biomedical systems, electronics, instrumentation, statistics, databases, biomechanics, biomaterials, medical devices and life sciences. My current direction includes **computational neuroscience, neural decoding, computational motor control and neurotechnology**.
 
 - 🧠 Building reproducible projects around **neural decoding**
 - 🦾 Interested in **motor control, BCI and neuroprosthetics**
 - 📊 Working across **Python, statistics, biomedical data analysis and machine learning**
 - 🧪 Applying coursework in **biomechanics, biomedical product design and information systems**
-- 🔬 Progressing toward **public neural datasets and stronger decoding baselines**
+- 🩺 Expanding into **medical software, regulatory strategy and quality systems**
 
 ### ✦ Current focus
 
-`neural populations` · `motor behaviour` · `decoding` · `reproducibility` · `biomedical innovation`
+`biomedical technology` · `biomedical data` · `medical devices` · `motor behaviour` · `computational neuroscience`
 
 </td>
 </tr>
@@ -161,7 +162,7 @@ src/
 
 A relational biomedical-information-system project connecting **patients, physicians, technicians, laboratories, prostheses, examinations, consultations, medical problems and medical equipment**.
 
-The project now exposes its actual architecture and analysis artefacts:
+The project exposes its architecture and analysis artefacts:
 
 ```text
 prosthesis-data-management/
@@ -175,15 +176,21 @@ It covers ER modelling, primary/foreign keys, many-to-many bridge tables, data c
 
 [**→ Open the full database project**](projects/prosthesis-data-management) · [**→ ER model**](projects/prosthesis-data-management/data-model.md) · [**→ SQL schema**](projects/prosthesis-data-management/schema.sql) · [**→ Power BI results**](projects/prosthesis-data-management/powerbi-results.md)
 
+### GaitGuard — Medical Software / SaMD Portfolio
+
+A structured Biomedical Technology project for learning and demonstrating **medical-software product definition, MDR classification reasoning, ISO 14971 risk management, software requirements, verification & validation, quality-system documentation and post-market planning**.
+
+[**→ Open the GaitGuard project**](projects/gaitguard-samd)
+
 ---
 
-## 🌐 Interactive portfolio
+## 🌐 Biomedical Technology Portfolio
 
-The same work is presented as a **Cosmos-inspired editorial visual archive**: image-first, asymmetric and curated around projects, methods and biomedical capabilities.
+The same work is presented as a **Cosmos-inspired editorial visual portfolio** curated around Biomedical Technology projects, methods and technical capabilities.
 
 <p align="center">
   <a href="https://diana-neurotech-portfolio.vercel.app">
-    <img src="https://img.shields.io/badge/OPEN_INTERACTIVE_PORTFOLIO-ff4fa3?style=for-the-badge&labelColor=07070a" alt="Open Diana's interactive portfolio" />
+    <img src="https://img.shields.io/badge/OPEN_BIOMEDICAL_TECHNOLOGY_PORTFOLIO-ff4fa3?style=for-the-badge&labelColor=07070a" alt="Open Diana's Biomedical Technology portfolio" />
   </a>
 </p>
 
@@ -200,18 +207,18 @@ The website source is in the root of this repository (`index.html`, `style.css`,
 
 ---
 
-## 🧭 What I am building toward
+## 🧭 Biomedical Technology direction
 
 ```text
 Biomedical Technology
         ↓
 Biomedical systems + electronics + data + life sciences
         ↓
+Biomechanics + medical devices + biomedical software
+        ↓
 Computational neuroscience + neural decoding
         ↓
-Public neural datasets + stronger ML baselines
-        ↓
-Neurotechnology + biomedical innovation
+Biomedical innovation + remote-ready technical work
 ```
 
-<p align="center"><sub>Build carefully · document clearly · make the work findable.</sub></p>
+<p align="center"><sub>Biomedical Technology · build carefully · document clearly · make the work findable.</sub></p>
