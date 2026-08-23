@@ -15,7 +15,7 @@ A quantitative comparison of **walking, running and sprinting** using motion-cap
 - Ground-contact timing from vertical ground-reaction force using a 50 N threshold
 - Step/stride timing and estimated spatial gait parameters
 
-## Experimental context
+## Experimental setup
 
 Data were exported from a **Qualisys motion-capture system**. Each dynamic condition contained 1,000 frames sampled at 100 Hz, corresponding to 10 seconds of recording. Force platforms complemented the kinematic data for contact timing.
 
@@ -30,14 +30,14 @@ Data were exported from a **Qualisys motion-capture system**. Each dynamic condi
 | Mean stride time | 1.27 s | 0.69 s | 0.63 s |
 | Flight / no-contact fraction | 0.0% | 20.0% | 30.1% |
 
-The distal ML marker showed the largest vertical excursion, increasing markedly from walking to sprint. One isolated walking acceleration value on the right ML was treated cautiously as a possible experimental artefact rather than used as a headline result.
+The distal ML marker showed the largest vertical excursion, increasing markedly from walking to sprint. An isolated walking acceleration value on the right ML was flagged during interpretation as a likely experimental artefact.
 
 ## Methods demonstrated
 
 `Biomechanics` · `motion capture` · `Qualisys` · `3D vectors` · `kinematics` · `force platforms` · `gait analysis` · `descriptive statistics` · `symmetry analysis` · `critical interpretation`
 
-## Limitations
+## Study scope
 
-This was a **single laboratory trial**, so the results describe the recorded experiment and are not population-level estimates. Spatial gait measures were approximate because the treadmill speed and direct foot markers were not available in the exported files.
+The dataset represents a single laboratory trial. Spatial gait measures were estimated from the available exported variables, while timing and kinematic results come directly from the recorded motion-capture and force-platform data.
 
-The original class report is intentionally not published here because it contains student identifiers and participant-specific information that are unnecessary for demonstrating the technical work.
+The public project includes the technical methodology and aggregated results used to demonstrate the analysis workflow.

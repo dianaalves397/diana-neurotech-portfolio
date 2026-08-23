@@ -2,24 +2,27 @@
 
 **Biomedical product-design coursework · Autodesk Fusion**
 
-A CAD assembly for a **gait-trainer concept**, preserved originally as an Autodesk Fusion `.f3z` design package.
+A CAD assembly for a **gait-trainer concept** developed in Autodesk Fusion. The design brings together the gait-assistance frame, caster components and fasteners, alongside an enclosure for an Arduino-related component.
 
-The supplied assembly metadata identifies a root design named **“versao atualizada do gait trainer”** and referenced components including a caster with brake, fasteners and an Arduino enclosure. This makes the artefact useful evidence of biomedical-product/CAD work without claiming manufacturing or clinical validation that is not documented in the source file.
+<p align="center">
+  <img src="fusion-preview.png" width="520" alt="Autodesk Fusion preview of the gait trainer assembly" />
+</p>
 
-## Demonstrated / project evidence
+## Project work
 
-- Assembly-level CAD work in Autodesk Fusion
+- Assembly-level CAD in Autodesk Fusion
 - Mechanical component integration
-- Use of standard hardware / fasteners
-- Enclosure integration for an Arduino-related component
-- Biomedical product-design context around gait assistance
+- Standard hardware and fasteners
+- Caster integration
+- Arduino-enclosure integration
+- Biomedical product-design work focused on gait assistance
 
-## Source artefact
+## Fusion project
 
-The original Autodesk Fusion source package is preserved separately as **`Diana-Alves-Gait-Trainer.f3z`**. It is not encoded into a text file or represented as source code here because the current GitHub connector cannot commit binary `.f3z` packages directly.
+[**Open / download the Autodesk Fusion project (.f3z) ↗**](https://drive.google.com/file/d/1bwisNnG-afc3zUxBcT_GuxmCJDgMlcfR/view?usp=drivesdk)
 
-The native design file can be added to this directory later through a binary Git upload path without changing the project framing.
+The original design package is **`Diana-Alves-Gait-Trainer.f3z`**.
 
-## Scope note
+## Interactive 3D
 
-This repository entry documents a **coursework design artefact**. No claim is made here about clinical testing, regulatory approval, finite-element validation or manufacture because those are not evidenced by the supplied file.
+Autodesk Fusion supports public Share Links and embeddable browser views. When a public Fusion Share Link is generated for this assembly, it can be embedded here so the model can be rotated and inspected directly in the browser.
