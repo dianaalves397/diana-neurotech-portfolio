@@ -1,0 +1,4 @@
+risk_id,function,hazard,sequence_of_events,hazardous_situation,possible_harm,severity,probability,initial_risk,control_id,risk_control,residual_severity,residual_probability,residual_risk,status
+RISK-001,TODO,TODO,TODO,TODO,TODO,,,,RC-001,TODO,,,,Draft
+RISK-002,TODO,TODO,TODO,TODO,TODO,,,,RC-002,TODO,,,,Draft
+RISK-003,TODO,TODO,TODO,TODO,TODO,,,,RC-003,TODO,,,,Draft
