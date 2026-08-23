@@ -1,0 +1,4 @@
+test_id,requirement_id,test_type,precondition,input,procedure,expected_result,actual_result,status,evidence
+TC-001,SW-001,Automated,TODO,TODO,TODO,TODO,,Not run,
+TC-002,SW-002,Manual/Automated,TODO,TODO,TODO,TODO,,Not run,
+TC-003,RC-001,Risk-control verification,TODO,TODO,TODO,TODO,,Not run,

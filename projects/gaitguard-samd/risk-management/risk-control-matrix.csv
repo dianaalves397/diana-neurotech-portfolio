@@ -1,0 +1,4 @@
+control_id,risk_id,risk_control,requirement_id,implementation_location,verification_test_id,verification_status
+RC-001,RISK-001,TODO,SW-XXX,TODO,TC-XXX,Not run
+RC-002,RISK-002,TODO,SW-XXX,TODO,TC-XXX,Not run
+RC-003,RISK-003,TODO,SW-XXX,TODO,TC-XXX,Not run

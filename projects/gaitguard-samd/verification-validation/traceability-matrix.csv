@@ -1,0 +1,3 @@
+user_need_id,system_requirement_id,software_requirement_id,risk_control_id,test_id,result,status
+UN-001,SYS-001,SW-001,,TC-001,,Draft
+UN-002,SYS-002,SW-002,RC-001,TC-002,,Draft
