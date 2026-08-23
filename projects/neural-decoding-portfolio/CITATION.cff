@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+title: "Movement Intention Decoder"
+type: software
+authors:
+  - family-names: "Alves"
+    given-names: "Diana"
+    orcid: "https://orcid.org/0009-0008-1557-2729"
+repository-code: "https://github.com/dianaalves397/diana-neurotech-portfolio/tree/main/projects/neural-decoding-portfolio"
+url: "https://github.com/dianaalves397/diana-neurotech-portfolio/tree/main/projects/neural-decoding-portfolio"
+license: MIT
