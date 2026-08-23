@@ -10,7 +10,7 @@
 
 ### Diana Alves
 
-**Biomedical Technology student**  
+**Biomedical Technology student**<br />
 Portugal 🇵🇹
 
 [![Portfolio](https://img.shields.io/badge/PORTFOLIO-diana--neurotech-111111?style=for-the-badge&labelColor=111111&color=ff4fa3)](https://diana-neurotech-portfolio.vercel.app)
@@ -21,9 +21,9 @@ Portugal 🇵🇹
 
 ## 🚀 About me
 
-I am studying **Biomedical Technology** and building toward **computational neuroscience, neural decoding and neurotechnology**.
+I am completing a degree in **Biomedical Technology at ESTSetúbal, Polytechnic Institute of Setúbal**, building at the intersection of biomedical engineering, data and computational neuroscience.
 
-I am especially interested in understanding how patterns of neural population activity can be translated into **movement, behaviour and motor intention** using mathematical and machine-learning models.
+My academic knowledge spans biomedical systems, electronics, data and life sciences. I am progressively directing that multidisciplinary base toward **computational neuroscience, neural decoding, computational motor control and neurotechnology**.
 
 - 🧠 Building reproducible projects around **neural decoding**
 - 🦾 Interested in **motor control, BCI and neuroprosthetics**
@@ -41,22 +41,40 @@ I am especially interested in understanding how patterns of neural population ac
 
 ---
 
-## 🛠 Tech stack / tools I am using
+## 🛠 Capabilities
 
-<p>
-  <img src="https://img.shields.io/badge/Python-111111?style=for-the-badge&logo=python&logoColor=ffd43b" alt="Python" />
-  <img src="https://img.shields.io/badge/NumPy-111111?style=for-the-badge&logo=numpy&logoColor=4D77CF" alt="NumPy" />
-  <img src="https://img.shields.io/badge/pandas-111111?style=for-the-badge&logo=pandas&logoColor=E70488" alt="pandas" />
-  <img src="https://img.shields.io/badge/scikit--learn-111111?style=for-the-badge&logo=scikitlearn&logoColor=F7931E" alt="scikit-learn" />
-  <img src="https://img.shields.io/badge/Matplotlib-111111?style=for-the-badge&logo=python&logoColor=b787ff" alt="Matplotlib" />
-  <img src="https://img.shields.io/badge/Git-111111?style=for-the-badge&logo=git&logoColor=F05032" alt="Git" />
-  <img src="https://img.shields.io/badge/HTML5-111111?style=for-the-badge&logo=html5&logoColor=E34F26" alt="HTML5" />
-  <img src="https://img.shields.io/badge/CSS3-111111?style=for-the-badge&logo=css&logoColor=663399" alt="CSS3" />
-  <img src="https://img.shields.io/badge/JavaScript-111111?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="JavaScript" />
-  <img src="https://img.shields.io/badge/Vercel-111111?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" />
-</p>
+### Demonstrated through projects
 
-> I only list tools here when they are already represented in the work contained in this repository. My next technical milestones include public neural datasets, dimensionality reduction and more advanced neural-data modelling.
+Evidence from the projects and source code in this repository:
+
+| Area | Demonstrated work |
+| --- | --- |
+| Neural decoding | Introductory synthetic neural population modelling and motor-intention classification |
+| Machine learning | Logistic regression, feature standardization, stratified splitting and 5-fold cross-validation |
+| Model evaluation | Accuracy, classification reports, confusion matrices and reproducible output files |
+| Programming & data | Python, NumPy, pandas, scikit-learn, Matplotlib, file/data processing and basic ML workflows |
+| Engineering practice | Git/GitHub, debugging, regression testing, pytest and reproducible computational experiments |
+| Web | HTML, CSS and JavaScript used to build this editorial portfolio |
+
+`pandas` is included because it is used directly for labelled neural datasets and CSV result export. The repository does not present introductory neural modelling as advanced neuroscience expertise.
+
+### Academic knowledge
+
+These are competencies studied and applied in the multidisciplinary **Biomedical Technology** degree through coursework, projects and laboratory work. They are real academic knowledge, presented without implying professional experience, advanced specialization or research-laboratory employment.
+
+| Area | Academic knowledge |
+| --- | --- |
+| Biomedical Electronics & Instrumentation | Analog electronics; diodes, BJT and MOSFET; circuit analysis, simulation, assembly and measurements; sensors, transducers, operational/differential amplification, analog filters, ADC/DAC, signal conditioning and biomedical acquisition |
+| Statistics & Data | Descriptive statistics, probability and distributions, sampling and estimation, confidence intervals, parametric/non-parametric hypothesis tests, chi-square, Wilcoxon/Mann–Whitney, regression, correlation, residual analysis, R and biomedical-data interpretation |
+| Databases | Relational databases, entity–relationship modelling, normalization, SQL and data manipulation; XML, XML Schema/DTD, XPath and information modelling |
+| Biomaterials | Biomaterial–tissue interaction and biocompatibility; stainless steel, titanium alloys, CoCr and Nitinol; ceramics, calcium phosphates, polymers, hydrogels and composites; drug delivery, coatings, characterization and degradation |
+| Biomechanics | Newtonian mechanics, statics and dynamics, forces and moments, free-body diagrams, center of mass, kinematics, biomechanics and quantitative human-movement analysis |
+| Medical Devices | Risk classification, regulation and vigilance fundamentals; diagnostic, monitoring, implantable, surgical and life-support devices; biomedical equipment, electrical safety, limitations and error sources |
+| Biomedical & Molecular Sciences | Human anatomy and physiology, biochemistry, cell and molecular biology, membranes and transport, extracellular matrix, proteins, DNA/RNA, gene expression and regulation, cell cycle, apoptosis, mutations and introductory PCR, electrophoresis and sequencing concepts |
+| Medical Product Development | Needs, requirements and specifications; concept generation and selection, product architecture, prototyping, technical drawing, CAD/3D-modelling fundamentals and prosthesis, orthosis, implant and rehabilitation-device design contexts |
+| Digital Health | Digital-health fundamentals, telemedicine, health information technologies and remote-healthcare concepts |
+
+The interactive [portfolio](https://diana-neurotech-portfolio.vercel.app#capabilities) presents this as a capability atlas with explicit **Demonstrated**, **Academic knowledge**, and **Currently building toward** context rather than a skill wall.
 
 ---
 
@@ -66,7 +84,7 @@ I am especially interested in understanding how patterns of neural population ac
 <tr>
 <td width="58%" valign="top">
 
-A reproducible introductory neural-decoding pipeline using **synthetic direction-tuned neural population activity**.
+A reproducible introductory neural-decoding pipeline using **synthetic direction-tuned neural population activity**—not experimental or clinical recordings.
 
 It simulates 40 neurons, generates spike-count-like observations, standardizes the features and trains a logistic-regression decoder to predict movement direction.
 
@@ -137,15 +155,13 @@ The website source is in the root of this repository (`index.html`, `style.css`,
 ```text
 Biomedical Technology
         ↓
-Python + statistics + reproducible analysis
+Biomedical systems + electronics + data + life sciences
         ↓
-Neural decoding + computational motor control
+Computational neuroscience + neural decoding
         ↓
 Public neural datasets + stronger ML baselines
         ↓
-Research experience + neurotechnology
-        ↓
-Useful biomedical products
+Neurotechnology + biomedical innovation
 ```
 
 <p align="center"><sub>Build carefully · document honestly · make the work findable.</sub></p>
