@@ -1,0 +1,108 @@
+---
+title: "Parkinson's Telemonitoring — Longitudinal Biomedical Statistics in R"
+author: "Diana Alves"
+format:
+  html:
+    toc: true
+    code-fold: true
+    embed-resources: true
+bibliography: references.bib
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+# Abstract
+
+TODO: Write this last. State the objective, dataset, repeated-measure design, statistical approach, principal result and conclusion in a compact paragraph.
+
+# Introduction
+
+Parkinson's disease symptom monitoring can involve repeated clinical and biomedical measurements over time. This project analyses a public telemonitoring dataset containing repeated voice measurements and UPDRS outcomes.
+
+TODO: Add concise biomedical context supported by references.
+
+# Research questions
+
+1. How does motor UPDRS vary over the telemonitoring period?
+2. Which selected biomedical voice measures are associated with motor UPDRS?
+3. Do those associations remain after accounting for repeated measurements within participants?
+
+# Dataset
+
+Source: Oxford Parkinson's Disease Telemonitoring Dataset, UCI Machine Learning Repository [@uci-parkinson].
+
+TODO: Report participant count, recording count, follow-up, outcomes, selected predictors and data-quality checks from the actual analysis.
+
+# Statistical methods
+
+## Descriptive statistics
+
+TODO.
+
+## Confidence intervals
+
+TODO.
+
+## Hypothesis tests
+
+TODO. State H0/H1, alpha, assumptions and effect estimate for each test used.
+
+## Correlation
+
+TODO.
+
+## Baseline regression
+
+TODO.
+
+## Longitudinal mixed-effects model
+
+Primary conceptual model:
+
+$$
+\text{motor UPDRS}_{ij} = \beta_0 + \beta_1\text{time}_{ij} + \beta_2\text{voice feature}_{ij} + u_i + \epsilon_{ij}
+$$
+
+where $u_i$ represents participant-specific baseline variation.
+
+# Results
+
+## Participant and recording characteristics
+
+TODO: Generated table.
+
+## Outcome distributions and trajectories
+
+TODO: Generated figures.
+
+## Associations
+
+TODO.
+
+## Regression results
+
+TODO.
+
+## Longitudinal model
+
+TODO.
+
+# Model diagnostics
+
+TODO: Residual behaviour, heteroscedasticity, collinearity, ICC/R² and influential observations where relevant.
+
+# Discussion
+
+TODO: Interpret magnitude and uncertainty, not only p-values.
+
+# Limitations
+
+Consider the observational dataset, small number of participants relative to recordings, interpolated UPDRS outcomes, model assumptions and generalisability.
+
+# Conclusion
+
+TODO.
+
+# References

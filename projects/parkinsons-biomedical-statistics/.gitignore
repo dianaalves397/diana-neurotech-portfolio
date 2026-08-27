@@ -1,0 +1,19 @@
+# R / RStudio
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# Quarto output
+_site/
+.quarto/
+
+# Reproducible environment cache
+renv/library/
+renv/staging/
+
+# Generated data and model artefacts
+results/models/*.rds
+
+# Keep raw/processed data policy explicit; do not ignore by default because
+# the UCI dataset is CC BY 4.0, but only commit data after provenance review.
