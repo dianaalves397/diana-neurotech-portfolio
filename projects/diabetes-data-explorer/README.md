@@ -75,6 +75,4 @@ pytest -q
 
 Current test suite: **4 tests** covering duplicate removal, summary generation, numeric preprocessing and class-balance calculation.
 
-## Skills demonstrated
 
-`Python` · `pandas` · `NumPy` · `Matplotlib` · `data cleaning` · `descriptive statistics` · `exploratory data analysis` · `correlation analysis` · `biomedical data visualisation` · `reproducible analysis`
