@@ -106,7 +106,7 @@ After quality control:
 - HF: **93.03 ms²**
 - LF/HF: **12.83**
 
-Because only two clean N3 windows were available, these values are descriptive and not evidence of a general N2-vs-N3 effect.
+All N3 windows that satisfied the same 5-minute, stage-purity and RR-quality criteria used throughout the analysis are included here. In this 2-hour segment, that produced 2 retained N3 windows.
 
 ## 8. Temporal characterization
 
@@ -126,14 +126,12 @@ The key finding of the project is methodological: **a high-performing QRS detect
 
 For that reason, the final single-subject profile uses a QC-aware approach rather than interpreting every numerically valid HRV window equally.
 
-The project does not diagnose autonomic dysfunction, and the results should not be generalized beyond this subject/record.
 
 ## 10. Limitations
 
 - single-subject observational case study;
 - only 18 retained HRV windows;
 - only 2 clean N3 windows;
-- no population inference;
 - sleep-stage annotations are inherited from the source record;
 - frequency-domain HRV is sensitive to RR preprocessing and local errors;
 - LF and LF/HF are not treated as direct physiological readouts of sympathetic activity.
@@ -142,4 +140,3 @@ The project does not diagnose autonomic dysfunction, and the results should not 
 
 This case study demonstrates an end-to-end biomedical signal-processing workflow that links **raw ECG, automated QRS detection, validation, RR quality control, HRV, sleep-stage context and error-aware interpretation**.
 
-The project is designed as a portfolio example of reproducible, cautious biomedical data analysis rather than as a clinical tool.
