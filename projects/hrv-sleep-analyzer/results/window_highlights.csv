@@ -1,0 +1,10 @@
+type,start_min,end_min,stage,metric,value,unit,note
+FLAG,65,70,N2,fp,1,count,One false positive; strong downstream HRV distortion
+FLAG,80,85,N2,fp_fn,2,count,One false positive and one false negative
+PASS_MAX,90,95,N2,rmssd,37.8214,ms,Highest clean RMSSD
+PASS_MAX,90,95,N2,pnn50,7.3394,percent,Highest clean pNN50
+PASS_MAX,90,95,N2,hf,465.0545,ms2,Highest clean HF
+PASS_MIN,40,45,N2,mean_hr,61.0725,bpm,Lowest clean mean HR
+PASS_MAX,105,110,N2,mean_hr,68.0681,bpm,Highest clean mean HR
+PASS_MAX,35,40,N2,sdnn,77.6469,ms,Highest clean SDNN
+PASS_MAX,15,20,N3,lf,1514.3984,ms2,Highest clean LF
