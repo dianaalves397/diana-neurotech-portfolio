@@ -1,0 +1,12 @@
+metric,value
+reference_beats,7806
+xqrs_detections,7809
+true_positives,7803
+false_positives,6
+false_negatives,3
+sensitivity_pct,99.9616
+positive_predictivity_pct,99.9232
+f1_pct,99.9424
+retained_hrv_windows,18
+pass_windows,16
+flag_windows,2
