@@ -43,27 +43,148 @@
 .reveal{opacity:0;transform:translateY(24px)}.reveal.on{opacity:1;transform:none;transition:opacity .7s,transform .7s}
 @media(max-width:800px){.top{padding:0 20px}.top nav{gap:18px}.top nav a:first-child{display:none}.hero{min-height:auto;padding:12vh 18px 48px;grid-template-columns:1fr;gap:36px}.hero h1{font-size:24vw}.hero-note{margin:0}.hero-aside{grid-template-columns:1fr 1fr}.hero-object{aspect-ratio:1}.archive{padding:60px 14px 80px}.archive-head{display:block}.filters{margin-top:25px}.board{grid-template-columns:repeat(2,1fr);gap:12px}.item{grid-column:auto!important;margin-top:0!important}.visual{aspect-ratio:4/5!important}.i3 .visual,.i6 .visual,.i8 .visual,.i9 .visual{aspect-ratio:1!important}.meta strong{font-size:19px}.statement{padding:90px 18px}.statement p{font-size:14vw}.capabilities{padding:75px 18px 90px}.cap-head,.cap-layout{grid-template-columns:1fr}.cap-head{gap:25px;margin-bottom:45px}.cap-layout{gap:35px}.cap-button{grid-template-columns:34px 1fr}.cap-button small{display:none}.cap-detail{position:relative;top:auto;min-height:0;padding:26px 20px}.cap-list{columns:1}.cap-detail h3{font-size:48px}.about{grid-template-columns:1fr;padding:70px 20px;gap:38px}.portrait{width:180px;justify-self:start}.about-copy{padding:0}.footer{flex-direction:column}.hero-aside .intro-line{grid-column:1/-1}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+
+/* 2026-09-27 portfolio refinement */
+.hero{min-height:calc(100vh - 62px);padding:7vh 5vw 6vh;grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);gap:5vw;align-items:center}
+.hero-main{align-self:center;display:flex;flex-direction:column;justify-content:center;min-height:60vh}
+.hero h1{font-size:clamp(76px,10.8vw,168px);line-height:.78}
+.hero-aside{align-self:center;gap:20px}
+.hero-note{margin:0;max-width:560px}
+.hero-object{aspect-ratio:1.08/1;max-height:55vh}
+.top nav{align-items:center}
+.lang-toggle{border:1px solid rgba(23,21,19,.38);background:transparent;border-radius:999px;padding:7px 10px;cursor:pointer;font-size:9px;text-transform:uppercase;letter-spacing:.12em}
+.lang-toggle:hover{background:var(--ink);color:var(--paper)}
+.project-card{appearance:none}
+.project-card:focus-visible{outline:2px solid var(--red);outline-offset:5px}
+.samd-art{background:linear-gradient(145deg,#d6d0c7,#6e655c);color:#171513;padding:8%;display:flex;flex-direction:column;justify-content:space-between}
+.samd-art span{font:400 clamp(30px,4vw,62px)/.86 Georgia,serif;letter-spacing:-.045em}
+.samd-art small{border-top:1px solid rgba(23,21,19,.5);padding-top:10px;font-size:9px;letter-spacing:.13em;text-transform:uppercase}
+.modal{position:fixed;inset:0;z-index:80;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(23,21,19,.56);backdrop-filter:blur(8px)}
+.modal.open{display:flex}
+.modal-panel{width:min(760px,100%);max-height:88vh;overflow:auto;background:var(--cream);border:1px solid rgba(23,21,19,.25);padding:34px;box-shadow:0 24px 80px rgba(0,0,0,.22)}
+.modal-top{display:flex;justify-content:space-between;gap:24px;align-items:start}
+.modal-kicker{font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)}
+.modal h3{margin:9px 0 0;font:400 clamp(36px,5vw,66px)/.92 Georgia,serif;letter-spacing:-.05em}
+.modal-close{border:1px solid var(--ink);background:transparent;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:18px;line-height:1}
+.modal-copy{margin:28px 0 0;max-width:650px;font:400 18px/1.45 Georgia,serif}
+.modal-explore{margin:28px 0 0;padding-top:18px;border-top:1px solid var(--line)}
+.modal-explore h4{margin:0 0 9px;font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)}
+.modal-explore p{margin:0;line-height:1.55;font-size:13px}
+.modal-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.modal-actions a,.modal-actions button{border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:11px 15px;font-size:9px;text-transform:uppercase;letter-spacing:.12em;cursor:pointer}
+.modal-actions button{background:transparent;color:var(--ink)}
+@media(max-width:800px){
+  .top{height:auto;min-height:62px}
+  .top nav{gap:11px}
+  .top nav a{font-size:9px}
+  .lang-toggle{padding:6px 8px}
+  .hero{padding:9vh 18px 48px;grid-template-columns:1fr;gap:34px}
+  .hero-main{min-height:auto}
+  .hero h1{font-size:22vw}
+  .hero-object{aspect-ratio:1}
+  .modal{padding:12px}.modal-panel{padding:24px}
+}
+
 </style>
 </head>
 <body>
-<header class="top"><a class="brand" href="#top">Diana Alves</a><nav><a href="#archive">Archive</a><a href="#capabilities">Capabilities</a><a href="#about">About</a><a href="https://github.com/dianaalves397" target="_blank" rel="noreferrer">GitHub ↗</a></nav></header>
+<header class="top"><a class="brand" href="#top">Diana Alves</a><nav><a href="#projects" data-i18n="navProjects">Projects</a><a href="#capabilities" data-i18n="navCapabilities">Capabilities</a><a href="#about" data-i18n="navAbout">About</a><a href="https://github.com/dianaalves397" target="_blank" rel="noreferrer">GitHub ↗</a><button class="lang-toggle" id="langToggle" type="button" aria-label="Change language">PT</button></nav></header>
 <main>
-<section class="hero" id="top"><div><p class="micro">Biomedical Technology Portfolio · Portugal · 2026</p><h1>Diana<br><em>Alves</em></h1></div><div class="hero-aside"><p class="hero-note">A <em>Biomedical Technology portfolio</em> where biology, movement, devices and computation meet.</p><div class="hero-object" aria-hidden="true"></div><div class="intro-line"><span>biomedical data / devices / movement</span><span>scroll to wander ↓</span></div></div></section>
-<section class="archive" id="archive"><div class="archive-head"><div><p class="micro">Selected elements · 001—010</p><h2>Biomedical work,<br><em>collected visually.</em></h2></div><div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="project">Projects</button><button class="filter" data-filter="coursework">Coursework</button><button class="filter" data-filter="research">Research</button></div></div><div class="board">
-<article class="item i1" data-cat="project"><a class="card" href="https://github.com/dianaalves397/diana-neurotech-portfolio/tree/main/projects/neural-decoding-portfolio" target="_blank" rel="noreferrer"><div class="visual signal-art"></div><div class="meta"><span>001 · project</span><strong>Movement Intention Decoder</strong><small>synthetic neural population · logistic regression</small></div></a></article>
-<article class="item i2" data-cat="project"><a class="card" href="https://github.com/dianaalves397/diana-neurotech-portfolio/tree/main/projects/neural-decoding-portfolio/results" target="_blank" rel="noreferrer"><div class="visual matrix"><img src="https://raw.githubusercontent.com/dianaalves397/diana-neurotech-portfolio/main/projects/neural-decoding-portfolio/results/confusion_matrix.png" alt="Confusion matrix from movement intention decoder"></div><div class="meta"><span>002 · result</span><strong>84.5% test accuracy</strong><small>89.6% mean across five stratified CV folds</small></div></a></article>
-<article class="item i3" data-cat="project"><a class="card" href="https://github.com/dianaalves397/diana-neurotech-portfolio/tree/main/projects/emg2mu-issue-16" target="_blank" rel="noreferrer"><div class="visual emg-art"><svg viewBox="0 0 600 300" preserveAspectRatio="none"><path d="M0 155L35 154L52 153L69 63L79 231L94 121L108 155L153 156L182 154L201 86L211 212L224 129L238 154L298 154L319 151L337 48L349 246L364 108L379 155L431 155L455 151L470 94L481 207L495 128L510 154L600 155"/></svg></div><div class="meta"><span>003 · open source</span><strong>emg2mu / issue #16</strong><small>indexing · firing intervals · regression test</small></div></a></article>
-<article class="item i4" data-cat="research"><div class="card"><div class="visual motor-art"><span>Movement as structure.</span></div><div class="meta"><span>004 · research</span><strong>Motor control</strong><small>how neural dynamics relate to coordinated action and behaviour</small></div></div></article>
-<article class="item i5" data-cat="research"><div class="card"><div class="visual next-art"><strong>PUBLIC<br>NEURAL<br>DATA</strong><small>next progression / benchmarks / dimensionality / temporal decoding</small></div><div class="meta"><span>005 · next</span><strong>From synthetic to public data</strong><small>reproduce first, then extend</small></div></div></article>
-<article class="item i6" data-cat="coursework"><a class="card" href="https://github.com/dianaalves397/diana-neurotech-portfolio/tree/main/projects/biomechanics-gait-analysis" target="_blank" rel="noreferrer"><div class="visual gait-art"></div><div class="meta"><span>006 · coursework / biomechanics</span><strong>Biomechanics Gait Analysis</strong><small>Qualisys · 3D kinematics · force platforms · symmetry</small></div></a></article>
-<article class="item i7" data-cat="coursework"><a class="card" href="https://github.com/dianaalves397/diana-neurotech-portfolio/tree/main/projects/gait-trainer-cad" target="_blank" rel="noreferrer"><div class="visual cad-art"></div><div class="meta"><span>007 · coursework / product design</span><strong>Gait Trainer — CAD Assembly</strong><small>Autodesk Fusion · assembly · biomedical design context</small></div></a></article>
-<article class="item i8" data-cat="coursework"><a class="card" href="https://github.com/dianaalves397/diana-neurotech-portfolio/tree/main/projects/diabetes-data-explorer" target="_blank" rel="noreferrer"><div class="visual data-art"></div><div class="meta"><span>008 · coursework / data</span><strong>Diabetes Data Explorer</strong><small>Python · pandas · biomedical EDA · visualisation</small></div></a></article>
-<article class="item i9" data-cat="coursework"><a class="card" href="https://github.com/dianaalves397/diana-neurotech-portfolio/tree/main/projects/prosthesis-data-management" target="_blank" rel="noreferrer"><div class="visual db-art"></div><div class="meta"><span>009 · team coursework / information</span><strong>Prosthesis Data Management</strong><small>relational modelling · technical documentation · Power BI</small></div></a></article>
-<article class="item i10" data-cat="project"><a class="card" href="https://github.com/dianaalves397/diana-neurotech-portfolio/tree/main/projects/hrv-sleep-analyzer" target="_blank" rel="noreferrer"><div class="visual hrv-art"><svg viewBox="0 0 640 360" preserveAspectRatio="none" aria-hidden="true"><line class="stage" x1="90" y1="0" x2="90" y2="360"/><line class="stage" x1="210" y1="0" x2="210" y2="360"/><line class="stage" x1="350" y1="0" x2="350" y2="360"/><line class="stage" x1="500" y1="0" x2="500" y2="360"/><path class="wave" d="M0 190 L55 190 L70 184 L78 210 L88 92 L98 260 L112 155 L128 190 L180 190 L195 185 L205 215 L216 105 L228 252 L244 157 L260 190 L315 190 L330 184 L340 214 L352 76 L366 272 L382 148 L398 190 L455 190 L468 184 L478 214 L490 112 L504 244 L520 158 L536 190 L640 190"/></svg><small>ECG → QRS → RR → HRV</small><span>Sleep autonomic<br>profiling.</span></div><div class="meta"><span>010 · project / biosignals</span><strong>HRV Sleep Analyzer</strong><small>WFDB XQRS · HRV · sleep stages · detector validation · QC-aware single-subject analysis</small></div></a></article>
+<section class="hero" id="top"><div class="hero-main"><p class="micro" data-i18n="heroMicro">Biomedical Technology Portfolio · Portugal · 2026</p><h1>Diana<br><em>Alves</em></h1></div><div class="hero-aside"><p class="hero-note" data-i18n-html="heroNote">A <em>Biomedical Technology portfolio</em> where biology, movement, devices and computation meet.</p><div class="hero-object" aria-hidden="true"></div><div class="intro-line"><span data-i18n="heroLine1">biomedical data / devices / movement</span><span data-i18n="heroLine2">scroll to wander ↓</span></div></div></section>
+<section class="archive" id="projects"><div class="archive-head"><div><p class="micro" data-i18n="projectsMicro">Selected projects · newest first</p><h2><em data-i18n="projectsTitle">Biomedical work, projects.</em></h2></div><div class="filters"><button class="filter active" data-filter="all" data-i18n="filterAll">All</button><button class="filter" data-filter="project" data-i18n="filterProjects">Projects</button><button class="filter" data-filter="coursework" data-i18n="filterCoursework">Coursework</button></div></div><div class="board">
+
+<article class="item i1" data-cat="project"><button class="card project-card" type="button"
+data-title-en="HRV Sleep Analyzer" data-title-pt="HRV Sleep Analyzer"
+data-category-en="Project · biosignal processing" data-category-pt="Projeto · processamento de biossinais"
+data-desc-en="A single-subject sleep case study that follows ECG data through QRS detection, RR intervals, HRV, sleep-stage context and quality-aware interpretation."
+data-desc-pt="Um estudo de caso de sono de um único sujeito que acompanha os dados de ECG através da deteção QRS, intervalos RR, HRV, contexto dos estágios do sono e interpretação com controlo de qualidade."
+data-explore-en="Start with README.md for the overview, then open REPORT.md for the scientific narrative and results/ for the validation and summary tables."
+data-explore-pt="Começa pelo README.md para a visão geral, depois abre REPORT.md para a narrativa científica e results/ para as tabelas de validação e resumo."
+data-github="https://github.com/dianaalves397/diana-neurotech-portfolio/tree/main/projects/hrv-sleep-analyzer">
+<div class="visual hrv-art"><svg viewBox="0 0 640 360" preserveAspectRatio="none" aria-hidden="true"><line class="stage" x1="90" y1="0" x2="90" y2="360"/><line class="stage" x1="210" y1="0" x2="210" y2="360"/><line class="stage" x1="350" y1="0" x2="350" y2="360"/><line class="stage" x1="500" y1="0" x2="500" y2="360"/><path class="wave" d="M0 190 L55 190 L70 184 L78 210 L88 92 L98 260 L112 155 L128 190 L180 190 L195 185 L205 215 L216 105 L228 252 L244 157 L260 190 L315 190 L330 184 L340 214 L352 76 L366 272 L382 148 L398 190 L455 190 L468 184 L478 214 L490 112 L504 244 L520 158 L536 190 L640 190"/></svg><small>ECG → QRS → RR → HRV</small><span>Sleep autonomic<br>profiling.</span></div>
+<div class="meta"><span data-en="001 · project / biosignals" data-pt="001 · projeto / biossinais">001 · project / biosignals</span><strong>HRV Sleep Analyzer</strong><small data-en="single-subject sleep profile · HRV · validation" data-pt="perfil de sono de um sujeito · HRV · validação">single-subject sleep profile · HRV · validation</small></div></button></article>
+
+<article class="item i2" data-cat="project"><button class="card project-card" type="button"
+data-title-en="emg2mu / issue #16" data-title-pt="emg2mu / issue #16"
+data-category-en="Project · open source" data-category-pt="Projeto · open source"
+data-desc-en="An open-source debugging contribution focused on consecutive motor-unit firings, indexing logic and a regression test for close-spike handling."
+data-desc-pt="Uma contribuição open source de debugging focada em disparos consecutivos de unidades motoras, lógica de indexação e um teste de regressão para spikes demasiado próximos."
+data-explore-en="Read the project README first, then inspect the prepared patch and regression test to understand the bug, the proposed correction and how it was validated."
+data-explore-pt="Lê primeiro o README do projeto e depois consulta o patch e o teste de regressão para perceber o erro, a correção proposta e a respetiva validação."
+data-github="https://github.com/dianaalves397/diana-neurotech-portfolio/tree/main/projects/emg2mu-issue-16">
+<div class="visual emg-art"><svg viewBox="0 0 600 300" preserveAspectRatio="none"><path d="M0 155L35 154L52 153L69 63L79 231L94 121L108 155L153 156L182 154L201 86L211 212L224 129L238 154L298 154L319 151L337 48L349 246L364 108L379 155L431 155L455 151L470 94L481 207L495 128L510 154L600 155"/></svg></div>
+<div class="meta"><span data-en="002 · project / open source" data-pt="002 · projeto / open source">002 · project / open source</span><strong>emg2mu / issue #16</strong><small data-en="indexing · firing intervals · regression test" data-pt="indexação · intervalos de disparo · teste de regressão">indexing · firing intervals · regression test</small></div></button></article>
+
+<article class="item i3" data-cat="project"><button class="card project-card" type="button"
+data-title-en="GaitGuard — SaMD" data-title-pt="GaitGuard — SaMD"
+data-category-en="Project · medical software" data-category-pt="Projeto · software médico"
+data-desc-en="A structured medical-software project exploring how a gait-monitoring product can be defined through intended use, requirements, risk management, verification, traceability and post-market planning."
+data-desc-pt="Um projeto estruturado de software médico que explora como um produto de monitorização da marcha pode ser definido através de finalidade prevista, requisitos, gestão de risco, verificação, rastreabilidade e planeamento pós-mercado."
+data-explore-en="Open README.md for the project map, then follow PROJECT_PLAN.md and the regulatory, risk-management and verification-validation folders."
+data-explore-pt="Abre README.md para veres o mapa do projeto e depois segue PROJECT_PLAN.md e as pastas regulatory, risk-management e verification-validation."
+data-github="https://github.com/dianaalves397/diana-neurotech-portfolio/tree/main/projects/gaitguard-samd">
+<div class="visual samd-art"><span>SaMD<br>TRACEABILITY</span><small>needs → risks → tests</small></div>
+<div class="meta"><span data-en="003 · project / medical software" data-pt="003 · projeto / software médico">003 · project / medical software</span><strong>GaitGuard — SaMD</strong><small data-en="requirements · risk · verification · traceability" data-pt="requisitos · risco · verificação · rastreabilidade">requirements · risk · verification · traceability</small></div></button></article>
+
+<article class="item i4" data-cat="project"><button class="card project-card" type="button"
+data-title-en="Movement Intention Decoder" data-title-pt="Movement Intention Decoder"
+data-category-en="Project · computational neuroscience" data-category-pt="Projeto · neurociência computacional"
+data-desc-en="An introductory neural-decoding workflow using synthetic direction-tuned neural population activity and logistic regression to classify movement direction."
+data-desc-pt="Um workflow introdutório de neural decoding com atividade sintética de uma população neural sintonizada à direção e regressão logística para classificar a direção do movimento."
+data-explore-en="Start with README.md, run run_experiment.py, then inspect results/ and tests/ to follow the experiment and its reproducibility checks."
+data-explore-pt="Começa pelo README.md, executa run_experiment.py e depois explora results/ e tests/ para acompanhar a experiência e as verificações de reprodutibilidade."
+data-github="https://github.com/dianaalves397/diana-neurotech-portfolio/tree/main/projects/neural-decoding-portfolio">
+<div class="visual signal-art"></div>
+<div class="meta"><span data-en="004 · project / neurotechnology" data-pt="004 · projeto / neurotecnologia">004 · project / neurotechnology</span><strong>Movement Intention Decoder</strong><small data-en="synthetic neural population · logistic regression" data-pt="população neural sintética · regressão logística">synthetic neural population · logistic regression</small></div></button></article>
+
+<article class="item i5" data-cat="coursework"><button class="card project-card" type="button"
+data-title-en="Biomechanics Gait Analysis" data-title-pt="Análise Biomecânica da Marcha"
+data-category-en="Coursework · biomechanics" data-category-pt="Trabalho académico · biomecânica"
+data-desc-en="A laboratory gait study using Qualisys 3D motion capture and force-platform data to analyse walking, running and sprinting."
+data-desc-pt="Um estudo laboratorial da marcha com captura de movimento 3D Qualisys e plataformas de força para analisar caminhada, corrida e sprint."
+data-explore-en="Read README.md for the workflow, then open docs/methods.md, docs/results.md and data/ for equations, interpretation and aggregated tables."
+data-explore-pt="Lê README.md para o workflow e depois abre docs/methods.md, docs/results.md e data/ para veres equações, interpretação e tabelas agregadas."
+data-github="https://github.com/dianaalves397/diana-neurotech-portfolio/tree/main/projects/biomechanics-gait-analysis">
+<div class="visual gait-art"></div>
+<div class="meta"><span data-en="005 · coursework / biomechanics" data-pt="005 · trabalho académico / biomecânica">005 · coursework / biomechanics</span><strong data-en="Biomechanics Gait Analysis" data-pt="Análise Biomecânica da Marcha">Biomechanics Gait Analysis</strong><small data-en="Qualisys · 3D kinematics · force platforms · symmetry" data-pt="Qualisys · cinemática 3D · plataformas de força · simetria">Qualisys · 3D kinematics · force platforms · symmetry</small></div></button></article>
+
+<article class="item i6" data-cat="coursework"><button class="card project-card" type="button"
+data-title-en="Gait Trainer — CAD Assembly" data-title-pt="Gait Trainer — Montagem CAD"
+data-category-en="Coursework · product design" data-category-pt="Trabalho académico · design de produto"
+data-desc-en="A biomedical product-design project developed in Autodesk Fusion around an assembly-level gait-assistance concept and its mechanical integration."
+data-desc-pt="Um projeto de design de produto biomédico desenvolvido em Autodesk Fusion em torno de um conceito de assistência à marcha e da sua integração mecânica."
+data-explore-en="Open the README for context, then inspect the Fusion preview and source-design link to understand the assembly and component integration."
+data-explore-pt="Abre o README para o contexto e depois consulta a pré-visualização do Fusion e o link do ficheiro de origem para perceber a montagem e a integração dos componentes."
+data-github="https://github.com/dianaalves397/diana-neurotech-portfolio/tree/main/projects/gait-trainer-cad">
+<div class="visual cad-art"></div>
+<div class="meta"><span data-en="006 · coursework / product design" data-pt="006 · trabalho académico / design de produto">006 · coursework / product design</span><strong data-en="Gait Trainer — CAD Assembly" data-pt="Gait Trainer — Montagem CAD">Gait Trainer — CAD Assembly</strong><small data-en="Autodesk Fusion · assembly · biomedical design" data-pt="Autodesk Fusion · montagem · design biomédico">Autodesk Fusion · assembly · biomedical design</small></div></button></article>
+
+<article class="item i7" data-cat="coursework"><button class="card project-card" type="button"
+data-title-en="Diabetes Data Explorer" data-title-pt="Diabetes Data Explorer"
+data-category-en="Coursework · biomedical data" data-category-pt="Trabalho académico · dados biomédicos"
+data-desc-en="A modular Python biomedical-data project covering preprocessing, descriptive analysis, generated result tables and tests."
+data-desc-pt="Um projeto modular de dados biomédicos em Python que inclui pré-processamento, análise descritiva, tabelas de resultados e testes."
+data-explore-en="Begin with README.md, then browse src/ for the implementation, results/ for generated outputs and tests/ for the validation structure."
+data-explore-pt="Começa pelo README.md e depois explora src/ para a implementação, results/ para os outputs gerados e tests/ para a estrutura de validação."
+data-github="https://github.com/dianaalves397/diana-neurotech-portfolio/tree/main/projects/diabetes-data-explorer">
+<div class="visual data-art"></div>
+<div class="meta"><span data-en="007 · coursework / data" data-pt="007 · trabalho académico / dados">007 · coursework / data</span><strong>Diabetes Data Explorer</strong><small data-en="Python · pandas · biomedical EDA · visualisation" data-pt="Python · pandas · EDA biomédica · visualização">Python · pandas · biomedical EDA · visualisation</small></div></button></article>
+
+<article class="item i8" data-cat="coursework"><button class="card project-card" type="button"
+data-title-en="Prosthesis Data Management" data-title-pt="Gestão de Dados de Próteses"
+data-category-en="Coursework · biomedical information" data-category-pt="Trabalho académico · informação biomédica"
+data-desc-en="A team biomedical-information-system project connecting patients, clinicians, laboratories, prostheses, examinations and related healthcare data."
+data-desc-pt="Um projeto de equipa de sistema de informação biomédico que liga pacientes, profissionais de saúde, laboratórios, próteses, exames e dados clínicos relacionados."
+data-explore-en="Open the README first, then inspect data-model.md, schema.sql, etl_example.py and powerbi-results.md to follow the architecture from model to analysis."
+data-explore-pt="Abre primeiro o README e depois consulta data-model.md, schema.sql, etl_example.py e powerbi-results.md para acompanhar a arquitetura desde o modelo até à análise."
+data-github="https://github.com/dianaalves397/diana-neurotech-portfolio/tree/main/projects/prosthesis-data-management">
+<div class="visual db-art"></div>
+<div class="meta"><span data-en="008 · team coursework / information" data-pt="008 · trabalho de equipa / informação">008 · team coursework / information</span><strong data-en="Prosthesis Data Management" data-pt="Gestão de Dados de Próteses">Prosthesis Data Management</strong><small data-en="relational modelling · documentation · Power BI" data-pt="modelação relacional · documentação · Power BI">relational modelling · documentation · Power BI</small></div></button></article>
+
 </div></section>
-<section class="statement"><p>I collect biomedical questions around <em>signal</em>, movement, devices and the models between them. The goal is not complexity. It is <em>meaning.</em></p></section>
-<section class="capabilities" id="capabilities"><div class="cap-head"><div><p class="micro">Capabilities · 01—13</p><h2>Biomedical<br><em>toolkit.</em></h2></div><p>Biomedical Technology is the foundation. My technical work spans electronics, instrumentation, data, biomechanics, biomaterials, medical devices, product design and computational neuroscience.</p></div><div class="cap-layout"><div class="cap-index" role="group" aria-label="Thirteen biomedical capability areas">
-<button class="cap-button active" type="button" data-label="Computational &amp; Neurotechnology" data-level="Demonstrated" data-items="Biosignal processing|Neural decoding|Motor intention decoding|Introductory neural population modelling|Machine-learning classification|Logistic regression|Cross-validation|Model evaluation|Confusion matrices|Reproducible computational experiments" aria-pressed="true"><b>01</b><strong>Computational &amp; Neurotechnology</strong><small>Demonstrated</small></button>
+<section class="statement"><p data-i18n-html="statement">I collect biomedical knowledge. The goal is exploring biomedical technologies and its applications. It is <em>meaning.</em></p></section>
+<section class="capabilities" id="capabilities"><div class="cap-head"><div><p class="micro" data-i18n="capMicro">Capabilities · 01—13</p><h2 data-i18n-html="capTitle">Biomedical<br><em>toolkit.</em></h2></div><p data-i18n="capIntro">Biomedical Technology is the foundation. My technical work spans electronics, instrumentation, data, biomechanics, biomaterials, medical devices, product design and computational neuroscience.</p></div><div class="cap-layout"><div class="cap-index" role="group" aria-label="Thirteen biomedical capability areas">
+<button class="cap-button active" type="button" data-label="Computational &amp; Neurotechnology" data-level="Introductory" data-items="Biosignal processing|Neural decoding|Motor intention decoding|Introductory neural population modelling|Machine-learning classification|Logistic regression|Cross-validation|Model evaluation|Confusion matrices|Reproducible computational experiments" aria-pressed="true"><b>01</b><strong>Computational &amp; Neurotechnology</strong><small>Introductory</small></button>
 <button class="cap-button" type="button" data-label="Programming &amp; Data" data-level="Demonstrated + academic knowledge" data-items="Python|Algorithms|Procedural programming|Basic object-oriented programming|Data structures|NumPy|pandas|scikit-learn|Matplotlib|Jupyter / Colab|Git|GitHub|File and data processing|Basic machine-learning workflows|Biomedical exploratory data analysis" aria-pressed="false"><b>02</b><strong>Programming &amp; Data</strong><small>Demonstrated + academic knowledge</small></button>
 <button class="cap-button" type="button" data-label="Statistics" data-level="Academic knowledge" data-items="Descriptive statistics|Probability|Random variables|Probability distributions|Sampling|Estimation|Confidence intervals|Hypothesis testing|Parametric tests|Non-parametric tests|Chi-square|Wilcoxon / Mann–Whitney|Simple linear regression|Correlation|Residual analysis|R|Biomedical data interpretation" aria-pressed="false"><b>03</b><strong>Statistics</strong><small>Academic knowledge</small></button>
 <button class="cap-button" type="button" data-label="Databases" data-level="Team project evidence + academic knowledge" data-items="Relational databases|Entity–relationship modelling|Normalization|SQL|Data manipulation|XML|XML Schema / DTD|XPath|Information modelling|Conceptual biomedical information modelling|Technical documentation|Introductory Power BI project use" aria-pressed="false"><b>04</b><strong>Databases</strong><small>Team project evidence + academic knowledge</small></button>
@@ -76,9 +197,166 @@
 <button class="cap-button" type="button" data-label="Medical Product Development" data-level="Demonstrated + academic / project knowledge" data-items="Needs identification|Patient and user needs|Requirements and specifications|Concept generation and selection|Product architecture|Prototyping|Technical drawing|CAD and 3D-modelling fundamentals|Autodesk Fusion|Assembly-level CAD work|Mechanical component integration|Gait-assistance design context|Prostheses and orthoses|Implant-design context|Rehabilitation-device context|Biomedical product design" aria-pressed="false"><b>11</b><strong>Medical Product Development</strong><small>Demonstrated + academic / project knowledge</small></button>
 <button class="cap-button" type="button" data-label="Digital Health" data-level="Introductory academic knowledge" data-items="Digital-health fundamentals|Telemedicine|Health information technologies|Remote-healthcare concepts" aria-pressed="false"><b>12</b><strong>Digital Health</strong><small>Introductory academic knowledge</small></button>
 <button class="cap-button" type="button" data-label="Research &amp; Engineering Practice" data-level="Demonstrated + academic / laboratory knowledge" data-items="Experimental and laboratory work|Literature research|Scientific and technical reporting|Data interpretation|Critical analysis|Problem solving|Debugging|Regression testing|Reproducibility|Team projects|Technical presentations|Experimental biomechanical analysis|Critical interpretation of noisy or anomalous measurements" aria-pressed="false"><b>13</b><strong>Research &amp; Engineering Practice</strong><small>Demonstrated + academic / laboratory knowledge</small></button>
-</div><article class="cap-detail" aria-live="polite"><span class="level" id="capLevel">Demonstrated</span><h3 id="capLabel">Computational &amp; Neurotechnology</h3><ul class="cap-list" id="capList"><li>Neural decoding</li><li>Motor intention decoding</li><li>Introductory neural population modelling</li><li>Machine-learning classification</li><li>Logistic regression</li><li>Cross-validation</li><li>Model evaluation</li><li>Confusion matrices</li><li>Reproducible computational experiments</li></ul></article></div></section>
-<section class="about" id="about"><div class="portrait"><img src="https://raw.githubusercontent.com/dianaalves397/diana-neurotech-portfolio/main/assets/diana-alves.png" alt="Diana Alves working at a laptop"><span>Diana Alves · Portugal</span></div><div class="about-copy"><p class="micro">About / Biomedical Technology</p><h2>Biomedical foundation.<br><em>Built across disciplines.</em></h2><p class="lead">I am studying Biomedical Technology, with projects spanning biomedical data, biomechanics, medical devices, product design and computational neuroscience.</p><p>I am especially interested in work where biological systems meet quantitative analysis and technology, including neural decoding and motor behaviour within a broader biomedical engineering context.</p><div class="rows"><div class="row"><span>Now</span><strong>Python · statistics · biomedical analysis</strong></div><div class="row"><span>Focus</span><strong>Biomedical data · biosignal processing · medical devices · computational neuroscience</strong></div><div class="row"><span>Evidence</span><strong>Biosignal processing · Qualisys · Autodesk Fusion · biomedical data projects</strong></div><div class="row"><span>Next</span><strong>SaMD · healthcare data · stronger computational projects</strong></div></div><div class="links"><a href="https://github.com/dianaalves397" target="_blank" rel="noreferrer">GitHub profile ↗</a><a href="https://orcid.org/0009-0008-1557-2729" target="_blank" rel="noreferrer">ORCID ↗</a></div></div></section>
-</main><footer class="footer"><span>Diana Alves · Biomedical Technology Portfolio</span><span>Data × Devices × Biomechanics × Computational Neuroscience</span><a href="#top">Back to top ↑</a></footer>
-<script>const fs=[...document.querySelectorAll('.filter')],items=[...document.querySelectorAll('.item')];fs.forEach(b=>b.onclick=()=>{fs.forEach(x=>x.classList.toggle('active',x===b));items.forEach(i=>i.classList.toggle('hidden',b.dataset.filter!=='all'&&i.dataset.cat!==b.dataset.filter))});const o=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle('on',e.isIntersecting)),{threshold:.08});items.forEach(i=>{i.classList.add('reveal');o.observe(i)});const capButtons=[...document.querySelectorAll('.cap-button')],capLevel=document.getElementById('capLevel'),capLabel=document.getElementById('capLabel'),capList=document.getElementById('capList');capButtons.forEach(button=>button.addEventListener('click',()=>{capButtons.forEach(item=>{item.classList.toggle('active',item===button);item.setAttribute('aria-pressed',String(item===button))});capLevel.textContent=button.dataset.level;capLabel.textContent=button.dataset.label;capList.replaceChildren(...button.dataset.items.split('|').map(value=>{const li=document.createElement('li');li.textContent=value;return li}))}));</script>
+</div><article class="cap-detail" aria-live="polite"><span class="level" id="capLevel">Introductory</span><h3 id="capLabel">Computational &amp; Neurotechnology</h3><ul class="cap-list" id="capList"><li>Neural decoding</li><li>Motor intention decoding</li><li>Introductory neural population modelling</li><li>Machine-learning classification</li><li>Logistic regression</li><li>Cross-validation</li><li>Model evaluation</li><li>Confusion matrices</li><li>Reproducible computational experiments</li></ul></article></div></section>
+<section class="about" id="about"><div class="portrait"><img src="https://raw.githubusercontent.com/dianaalves397/diana-neurotech-portfolio/main/assets/diana-alves.png" alt="Diana Alves working at a laptop"></div><div class="about-copy"><p class="micro" data-i18n="aboutMicro">About / Biomedical Technology</p><h2 data-i18n-html="aboutTitle">Biomedical foundation.<br><em>Built across disciplines.</em></h2><p class="lead" data-i18n="aboutLead">I am studying Biomedical Technology, with projects spanning biomedical data, biomechanics, medical devices, product design and computational neuroscience.</p><p data-i18n="aboutInterest">I am especially interested in work where biology meets technology.</p><div class="rows"><div class="row"><span data-i18n="rowNow">Now</span><strong data-i18n="rowNowValue">Python · statistics · biomedical analysis</strong></div><div class="row"><span data-i18n="rowFocus">Focus</span><strong data-i18n="rowFocusValue">Biomedical data · biosignal processing · medical devices · computational neuroscience</strong></div><div class="row"><span data-i18n="rowEvidence">Evidence</span><strong data-i18n="rowEvidenceValue">Biosignal processing · Qualisys · Autodesk Fusion · biomedical data projects</strong></div><div class="row"><span data-i18n="rowNext">Next</span><strong data-i18n="rowNextValue">SaMD · healthcare data · stronger computational projects</strong></div></div><div class="links"><a href="https://github.com/dianaalves397" target="_blank" rel="noreferrer" data-i18n="githubProfile">GitHub profile ↗</a><a href="https://orcid.org/0009-0008-1557-2729" target="_blank" rel="noreferrer">ORCID ↗</a></div></div></section>
+</main><footer class="footer"><span data-i18n="footerLeft">Diana Alves · Biomedical Technology Portfolio</span><span data-i18n="footerMid">Data × Devices × Biomechanics × Computational Neuroscience</span><a href="#top" data-i18n="footerTop">Back to top ↑</a></footer>
+<div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-panel"><div class="modal-top"><div><span class="modal-kicker" id="modalCategory"></span><h3 id="modalTitle"></h3></div><button class="modal-close" id="modalX" type="button" aria-label="Close">×</button></div><p class="modal-copy" id="modalDescription"></p><div class="modal-explore"><h4 data-i18n="modalHow">How to explore on GitHub</h4><p id="modalExplore"></p></div><div class="modal-actions"><a id="modalGithub" href="#" target="_blank" rel="noreferrer" data-i18n="modalGithub">Explore on GitHub ↗</a><button id="modalClose" type="button" data-i18n="modalClose">Close</button></div></div></div>
+<script>
+const translations={
+en:{
+navProjects:"Projects",navCapabilities:"Capabilities",navAbout:"About",
+heroMicro:"Biomedical Technology Portfolio · Portugal · 2026",
+heroNote:'A <em>Biomedical Technology portfolio</em> where biology, movement, devices and computation meet.',
+heroLine1:"biomedical data / devices / movement",heroLine2:"scroll to wander ↓",
+projectsMicro:"Selected projects · newest first",projectsTitle:"Biomedical work, projects.",
+filterAll:"All",filterProjects:"Projects",filterCoursework:"Coursework",
+statement:'I collect biomedical knowledge. The goal is exploring biomedical technologies and its applications. It is <em>meaning.</em>',
+capMicro:"Capabilities · 01—13",capTitle:'Biomedical<br><em>toolkit.</em>',
+capIntro:"Biomedical Technology is the foundation. My technical work spans electronics, instrumentation, data, biomechanics, biomaterials, medical devices, product design and computational neuroscience.",
+aboutMicro:"About / Biomedical Technology",aboutTitle:'Biomedical foundation.<br><em>Built across disciplines.</em>',
+aboutLead:"I am studying Biomedical Technology, with projects spanning biomedical data, biomechanics, medical devices, product design and computational neuroscience.",
+aboutInterest:"I am especially interested in work where biology meets technology.",
+rowNow:"Now",rowNowValue:"Python · statistics · biomedical analysis",
+rowFocus:"Focus",rowFocusValue:"Biomedical data · biosignal processing · medical devices · computational neuroscience",
+rowEvidence:"Evidence",rowEvidenceValue:"Biosignal processing · Qualisys · Autodesk Fusion · biomedical data projects",
+rowNext:"Next",rowNextValue:"SaMD · healthcare data · stronger computational projects",
+githubProfile:"GitHub profile ↗",footerLeft:"Diana Alves · Biomedical Technology Portfolio",
+footerMid:"Data × Devices × Biomechanics × Computational Neuroscience",footerTop:"Back to top ↑",
+modalHow:"How to explore on GitHub",modalGithub:"Explore on GitHub ↗",modalClose:"Close"
+},
+pt:{
+navProjects:"Projetos",navCapabilities:"Competências",navAbout:"Sobre",
+heroMicro:"Portefólio de Tecnologia Biomédica · Portugal · 2026",
+heroNote:'Um <em>portefólio de Tecnologia Biomédica</em> onde biologia, movimento, dispositivos e computação se encontram.',
+heroLine1:"dados biomédicos / dispositivos / movimento",heroLine2:"explorar ↓",
+projectsMicro:"Projetos selecionados · mais recentes primeiro",projectsTitle:"Trabalho biomédico, projetos.",
+filterAll:"Todos",filterProjects:"Projetos",filterCoursework:"Trabalhos académicos",
+statement:'Reúno conhecimento biomédico. O objetivo é explorar tecnologias biomédicas e as suas aplicações. É <em>significado.</em>',
+capMicro:"Competências · 01—13",capTitle:'Ferramentas<br><em>biomédicas.</em>',
+capIntro:"A Tecnologia Biomédica é a base. O meu trabalho técnico abrange eletrónica, instrumentação, dados, biomecânica, biomateriais, dispositivos médicos, design de produto e neurociência computacional.",
+aboutMicro:"Sobre / Tecnologia Biomédica",aboutTitle:'Base biomédica.<br><em>Construída entre disciplinas.</em>',
+aboutLead:"Estudo Tecnologia Biomédica, com projetos em dados biomédicos, biomecânica, dispositivos médicos, design de produto e neurociência computacional.",
+aboutInterest:"Tenho especial interesse em trabalhos onde a biologia encontra a tecnologia.",
+rowNow:"Agora",rowNowValue:"Python · estatística · análise biomédica",
+rowFocus:"Foco",rowFocusValue:"Dados biomédicos · processamento de biossinais · dispositivos médicos · neurociência computacional",
+rowEvidence:"Evidência",rowEvidenceValue:"Processamento de biossinais · Qualisys · Autodesk Fusion · projetos de dados biomédicos",
+rowNext:"Próximo",rowNextValue:"SaMD · dados de saúde · projetos computacionais mais fortes",
+githubProfile:"Perfil GitHub ↗",footerLeft:"Diana Alves · Portefólio de Tecnologia Biomédica",
+footerMid:"Dados × Dispositivos × Biomecânica × Neurociência Computacional",footerTop:"Voltar ao topo ↑",
+modalHow:"Como explorar no GitHub",modalGithub:"Explorar no GitHub ↗",modalClose:"Fechar"
+}
+};
+
+const capPT={
+"Computational & Neurotechnology":{label:"Computação & Neurotecnologia",level:"Introdutório",items:"Processamento de biossinais|Neural decoding|Decoding de intenção motora|Modelação introdutória de populações neurais|Classificação com machine learning|Regressão logística|Validação cruzada|Avaliação de modelos|Matrizes de confusão|Experiências computacionais reprodutíveis"},
+"Programming & Data":{label:"Programação & Dados",level:"Demonstrado + conhecimento académico"},
+"Statistics":{label:"Estatística",level:"Conhecimento académico"},
+"Databases":{label:"Bases de Dados",level:"Evidência em projeto de equipa + conhecimento académico"},
+"Biomedical Electronics":{label:"Eletrónica Biomédica",level:"Conhecimento académico / laboratorial"},
+"Biomedical Instrumentation":{label:"Instrumentação Biomédica",level:"Conhecimento académico / laboratorial"},
+"Medical Devices":{label:"Dispositivos Médicos",level:"Conhecimento académico"},
+"Biomaterials":{label:"Biomateriais",level:"Conhecimento académico / laboratorial"},
+"Biomechanics":{label:"Biomecânica",level:"Demonstrado + conhecimento académico / laboratorial"},
+"Biomedical & Life Sciences":{label:"Ciências Biomédicas & da Vida",level:"Conhecimento académico"},
+"Medical Product Development":{label:"Desenvolvimento de Produto Médico",level:"Demonstrado + conhecimento académico / de projeto"},
+"Digital Health":{label:"Saúde Digital",level:"Conhecimento académico introdutório"},
+"Research & Engineering Practice":{label:"Investigação & Prática de Engenharia",level:"Demonstrado + conhecimento académico / laboratorial"}
+};
+
+let currentLang="en";
+const langToggle=document.getElementById("langToggle");
+const capButtons=[...document.querySelectorAll(".cap-button")];
+const capLevel=document.getElementById("capLevel");
+const capLabel=document.getElementById("capLabel");
+const capList=document.getElementById("capList");
+
+function renderCap(button){
+  const enLabel=button.dataset.label;
+  const pt=capPT[enLabel];
+  const label=currentLang==="pt"&&pt?pt.label:enLabel;
+  const level=currentLang==="pt"&&pt?pt.level:button.dataset.level;
+  const items=currentLang==="pt"&&pt&&pt.items?pt.items:button.dataset.items;
+  capLabel.textContent=label;
+  capLevel.textContent=level;
+  capList.replaceChildren(...items.split("|").map(value=>{const li=document.createElement("li");li.textContent=value;return li}));
+}
+
+function applyLanguage(lang){
+  currentLang=lang;
+  document.documentElement.lang=lang;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const value=translations[lang][el.dataset.i18n];
+    if(value!==undefined)el.textContent=value;
+  });
+  document.querySelectorAll("[data-i18n-html]").forEach(el=>{
+    const value=translations[lang][el.dataset.i18nHtml];
+    if(value!==undefined)el.innerHTML=value;
+  });
+  document.querySelectorAll("[data-en][data-pt]").forEach(el=>{el.textContent=lang==="pt"?el.dataset.pt:el.dataset.en});
+  capButtons.forEach(button=>{
+    const enLabel=button.dataset.label;
+    const pt=capPT[enLabel];
+    button.querySelector("strong").textContent=lang==="pt"&&pt?pt.label:enLabel;
+    button.querySelector("small").textContent=lang==="pt"&&pt?pt.level:button.dataset.level;
+  });
+  const active=capButtons.find(b=>b.classList.contains("active"))||capButtons[0];
+  if(active)renderCap(active);
+  langToggle.textContent=lang==="en"?"PT":"EN";
+  langToggle.setAttribute("aria-label",lang==="en"?"Mudar para português":"Switch to English");
+  if(currentCard)renderProjectModal(currentCard);
+}
+
+langToggle.addEventListener("click",()=>applyLanguage(currentLang==="en"?"pt":"en"));
+
+const fs=[...document.querySelectorAll(".filter")],items=[...document.querySelectorAll(".item")];
+fs.forEach(b=>b.onclick=()=>{fs.forEach(x=>x.classList.toggle("active",x===b));items.forEach(i=>i.classList.toggle("hidden",b.dataset.filter!=="all"&&i.dataset.cat!==b.dataset.filter))});
+
+const observer=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle("on",e.isIntersecting)),{threshold:.08});
+items.forEach(i=>{i.classList.add("reveal");observer.observe(i)});
+
+capButtons.forEach(button=>button.addEventListener("click",()=>{
+  capButtons.forEach(item=>{item.classList.toggle("active",item===button);item.setAttribute("aria-pressed",String(item===button))});
+  renderCap(button);
+}));
+
+const modal=document.getElementById("projectModal");
+const modalTitle=document.getElementById("modalTitle");
+const modalCategory=document.getElementById("modalCategory");
+const modalDescription=document.getElementById("modalDescription");
+const modalExplore=document.getElementById("modalExplore");
+const modalGithub=document.getElementById("modalGithub");
+const modalClose=document.getElementById("modalClose");
+const modalX=document.getElementById("modalX");
+let currentCard=null;
+
+function renderProjectModal(card){
+  if(!card)return;
+  modalTitle.textContent=currentLang==="pt"?card.dataset.titlePt:card.dataset.titleEn;
+  modalCategory.textContent=currentLang==="pt"?card.dataset.categoryPt:card.dataset.categoryEn;
+  modalDescription.textContent=currentLang==="pt"?card.dataset.descPt:card.dataset.descEn;
+  modalExplore.textContent=currentLang==="pt"?card.dataset.explorePt:card.dataset.exploreEn;
+  modalGithub.href=card.dataset.github;
+}
+function openProject(card){
+  currentCard=card;
+  renderProjectModal(card);
+  modal.classList.add("open");
+  document.body.style.overflow="hidden";
+  modalX.focus();
+}
+function closeProject(){
+  modal.classList.remove("open");
+  document.body.style.overflow="";
+  if(currentCard)currentCard.focus();
+  currentCard=null;
+}
+document.querySelectorAll(".project-card").forEach(card=>card.addEventListener("click",()=>openProject(card)));
+modalClose.addEventListener("click",closeProject);
+modalX.addEventListener("click",closeProject);
+modal.addEventListener("click",e=>{if(e.target===modal)closeProject()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&modal.classList.contains("open"))closeProject()});
+
+applyLanguage("en");
+</script>
 </body>
 </html>
