@@ -48,6 +48,7 @@ My academic knowledge spans biomedical systems, electronics, instrumentation, st
 
 | Area | Demonstrated work |
 | --- | --- |
+| Biosignal processing & HRV | ECG/QRS detection with WFDB XQRS, RR intervals, HRV, sleep-stage alignment, detector validation and QC-aware interpretation |
 | Neural decoding | Introductory synthetic neural population modelling and motor-intention classification |
 | Machine learning | Logistic regression, feature standardization, stratified splitting and 5-fold cross-validation |
 | Model evaluation | Accuracy, classification reports, confusion matrices and reproducible output files |
@@ -75,6 +76,26 @@ Competencies studied and applied through **Biomedical Technology** coursework, p
 | Digital Health | Digital-health fundamentals, telemedicine, health information technologies and remote-healthcare concepts |
 
 [**→ Explore the interactive capability atlas**](https://diana-neurotech-portfolio.vercel.app#capabilities)
+
+---
+
+## ❤️ Featured project — HRV Sleep Analyzer
+
+A single-subject polysomnographic case study that follows **raw ECG → QRS detection → RR intervals → HRV → sleep-stage context → quality-controlled interpretation**.
+
+The automatic WFDB XQRS detector was validated against PhysioNet reference beat annotations with a ±100 ms tolerance:
+
+- **7,803 TP**
+- **6 FP**
+- **3 FN**
+- **99.96% sensitivity**
+- **99.92% positive predictivity**
+
+Eighteen 5-minute HRV windows were retained. **16 passed QC** and **2 were flagged**, including one window where a single false positive produced a large downstream distortion in RMSSD and HF.
+
+Among clean windows, the **90–95 min N2 period** had the highest RMSSD (**37.82 ms**) and HF (**465.05 ms²**).
+
+[**→ Open the HRV Sleep Analyzer project**](projects/hrv-sleep-analyzer) · [**→ Short scientific report**](projects/hrv-sleep-analyzer/REPORT.md) · [**→ Results tables**](projects/hrv-sleep-analyzer/results)
 
 ---
 
