@@ -1,0 +1,3 @@
+stage,n_windows,mean_hr_bpm_median,sdnn_ms_median,rmssd_ms_median,pnn50_pct_median,lf_ms2_median,hf_ms2_median,lf_hf_median
+N2,14,64.3176,44.9874,22.6981,3.2975,740.6396,146.0164,5.2422
+N3,2,63.9263,44.0324,21.9331,2.5292,1121.2780,93.0254,12.8273
