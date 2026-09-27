@@ -14,6 +14,8 @@ A polysomnographic recording makes it possible to look at several physiological 
 
 > How does ECG-derived HRV vary over time and across sleep stages in this recording, and how much can QRS-detection errors change the resulting HRV values?
 
+[**→ Concepts and reasoning guide**](CONCEPTS.md)
+
 The project was inspired by three ideas:
 
 1. **biosignal processing should start from the raw physiological signal**, not only from already-cleaned tables;
