@@ -66,9 +66,6 @@ Each simulated neuron has a preferred movement direction. Expected activity vari
 - Add temporal decoding and latent-state models.
 - Reproduce a baseline from the Neural Latents Benchmark or another public neural-population dataset.
 
-## Skills demonstrated
-
-Python · NumPy · pandas · scikit-learn · Matplotlib · statistics · reproducible experiments · introductory neural population modelling · classification
 
 ## Author
 
