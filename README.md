@@ -48,7 +48,7 @@ My academic knowledge spans biomedical systems, electronics, instrumentation, st
 
 | Area | Demonstrated work |
 | --- | --- |
-| Biosignal processing & HRV | ECG/QRS detection with WFDB XQRS, RR intervals, HRV, sleep-stage alignment, detector validation and QC-aware interpretation |
+| Biosignal processing | Biomedical signal-processing workflows |
 | Neural decoding | Introductory synthetic neural population modelling and motor-intention classification |
 | Machine learning | Logistic regression, feature standardization, stratified splitting and 5-fold cross-validation |
 | Model evaluation | Accuracy, classification reports, confusion matrices and reproducible output files |
