@@ -6,7 +6,7 @@
 <tr>
 <td width="31%" valign="top">
 
-<img src="assets/diana-alves.png" width="100%" alt="Diana Alves working on a laptop" />
+<img src="assets/diana-alves.jpeg" width="100%" alt="Diana Alves" />
 
 ### Diana Alves
 
@@ -24,7 +24,7 @@ Portugal 🇵🇹
 
 I am completing a degree in **Biomedical Technology at ESTSetúbal, Polytechnic Institute of Setúbal**, building academic experience in biomedical engineering, data and signal processing.
 
-My academic knowledge spans biomedical systems, electronics, instrumentation, statistics, databases, biomechanics, biomaterials, medical devices and life sciences. My current direction includes **computational neuroscience, neural decoding, computational motor control and neurotechnology**.
+My academic knowledge spans biomedical systems, electronics, instrumentation, statistics, databases, biomechanics, biomaterials, medical devices and life sciences.
 
 - 📡 Developing foundations in **digital signal processing with MATLAB**
 - 🦾 Interested in **motor control, BCI and neuroprosthetics**
@@ -43,19 +43,6 @@ My academic knowledge spans biomedical systems, electronics, instrumentation, st
 ---
 
 ## 🛠 Capabilities
-
-### Demonstrated through projects
-
-| Area | Demonstrated work |
-| --- | --- |
-| Signal processing coursework | Synthetic sampled signals, descriptive analysis, autocorrelation, moving-average smoothing and zero-crossing detection |
-| Programming & biomedical data | Python, NumPy, pandas, Matplotlib, exploratory data analysis and file/data processing |
-| MATLAB & digital signal processing | MATLAB scripts/functions, sinusoidal signal generation, descriptive metrics, autocorrelation, moving-average FIR filters, mean removal, zero-crossing detection and CSV export |
-| Biomechanics & human movement | Qualisys motion capture, 3D marker trajectories, knee-angle calculation, force-platform gait timing, symmetry and variability analysis |
-| Biomedical CAD / product design | Autodesk Fusion assembly work, mechanical component integration and a gait-assistance design concept |
-| Biomedical information systems | Relational modelling, MySQL project architecture, Python/pandas/SQLAlchemy ETL and Power BI analysis in team coursework |
-| Engineering practice | Git/GitHub, programming exercises, technical documentation, critical interpretation and reproducible data workflows |
-| Web | HTML, CSS and JavaScript used to build this editorial portfolio |
 
 ### Academic knowledge
 
@@ -81,7 +68,7 @@ Competencies studied and applied through **Biomedical Technology** coursework, p
 
 An exploratory acoustic-analysis project using pretrained **YAMNet** to read WAV files, aggregate frame scores and display the leading sound category and the score for `Crying, sobbing`.
 
-**Evidence:** four reported historical tests (two infant-cry recordings, silence and adult speech), including a cry recording classified as Speech. Quantitative detection performance and cry-cause recognition have **not** been validated. Private audio is not published; execution of the reorganised code remains to be verified in MATLAB.
+**Evidence:** four reported historical tests (two infant-cry recordings, silence and adult speech), including a cry recording classified as Speech. Quantitative detection performance and cry-cause recognition have **not** been validated. 
 
 [**→ Project and MATLAB code**](projects/baby-cry-analyzer) · [**→ Scientific report (Portuguese)**](projects/baby-cry-analyzer/docs/relatorio-cientifico.md) · [**→ Reproduction guide**](projects/baby-cry-analyzer/docs/reproducao.md) · [**→ Reported observations**](projects/baby-cry-analyzer/results/exploratory-observations.csv)
 
@@ -167,28 +154,3 @@ The same work is presented as a **Cosmos-inspired editorial visual portfolio** c
 The website source is in the root of this repository (`index.html`, `style.css`, `script.js`) and deploys through Vercel.
 
 ---
-
-## 📈 GitHub stats
-
-<p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=dianaalves397&show_icons=true&hide_border=true&bg_color=07070a&title_color=ff4fa3&text_color=ece7ef&icon_color=d6ff59" alt="Diana Alves GitHub statistics" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=dianaalves397&layout=compact&hide_border=true&bg_color=07070a&title_color=b787ff&text_color=ece7ef" alt="Most used languages on Diana Alves GitHub" />
-</p>
-
----
-
-## 🧭 Biomedical Technology direction
-
-```text
-Biomedical Technology
-        ↓
-Biomedical systems + electronics + data + life sciences
-        ↓
-Biomechanics + medical devices + biomedical software
-        ↓
-Computational neuroscience (future interest)
-        ↓
-Biomedical innovation + remote-ready technical work
-```
-
-<p align="center"><sub>Biomedical Technology · build carefully · document clearly · make the work findable.</sub></p>

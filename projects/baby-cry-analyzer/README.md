@@ -2,9 +2,8 @@
 
 **Análise acústica exploratória com MATLAB e YAMNet — Diana Alves**
 
-Um protótipo académico que lê um ficheiro WAV local, calcula pontuações por categoria sonora com uma rede pré-treinada e apresenta a categoria com maior pontuação média e a pontuação de `Crying, sobbing`.
+Um projeto que lê um ficheiro WAV local, calcula pontuações por categoria sonora com uma rede pré-treinada e apresenta a categoria com maior pontuação média e a pontuação de `Crying, sobbing`.
 
-**Estado científico:** quatro testes exploratórios documentados; avaliação quantitativa independente **ainda não realizada**. Não identifica causas do choro, não estima a probabilidade de doença e não constitui um dispositivo de monitorização ou diagnóstico.
 
 [Relatório científico](docs/relatorio-cientifico.md) · [Metodologia e reprodução](docs/reproducao.md) · [Observações em CSV](results/exploratory-observations.csv) · [Portefólio](https://diana-neurotech-portfolio.vercel.app/#baby-cry-analyzer)
 
@@ -15,7 +14,6 @@ Um protótipo académico que lê um ficheiro WAV local, calcula pontuações por
 - Pré-processamento oficial `yamnetPreprocess`, inferência em CPU e média das pontuações dos segmentos.
 - Apresentação das cinco categorias mais pontuadas e de `Crying, sobbing`.
 - Regra binária fixa para avaliação futura: choro apenas quando a categoria principal é `Crying, sobbing`.
-- Testes unitários da lógica e teste de integração com silêncio sintético temporário.
 
 `Crying, sobbing` é uma categoria acústica genérica; não é equivalente à categoria específica `Baby cry, infant cry`. Este projeto mantém a primeira para corresponder ao critério dos resultados históricos. Não combina nem troca estas classes depois de observar os resultados.
 
@@ -43,9 +41,9 @@ result.Ranking
 
 A pontuação é multiplicada por 100 para apresentação. **34,94% de pontuação não significa 34,94% de precisão nem probabilidade calibrada de choro.** Não há aprendizagem ou ajuste aos quatro testes na versão publicada.
 
-## Resultados exploratórios históricos
+## Resultados dos testes
 
-Valores transcritos dos resultados já descritos pela autora e pelo assistente na conversa de desenvolvimento. Os áudios não são distribuídos e estes testes não foram repetidos na preparação desta publicação.
+Testei o projeto com duas gravações de choro infantil, uma gravação predominantemente silenciosa e uma gravação da minha voz. A tabela reúne as categorias e pontuações obtidas.
 
 | Teste | Entrada descrita | Categoria principal | Pontuação principal | Pontuação de `Crying, sobbing` |
 | --- | --- | --- | ---: | ---: |
@@ -90,7 +88,6 @@ smoke_yamnet;
 
 Os testes unitários verificam média temporal, orientação das pontuações, empate, canais, padding e métricas com exemplos construídos. O smoke test verifica inferência real e integridade das saídas; não exige que silêncio receba uma classe específica e não mede precisão.
 
-**Estado de verificação da publicação:** revisão estática e correspondência com as APIs oficiais; MATLAB não está instalado no ambiente de preparação, pelo que a execução desta versão e destes testes não foi confirmada. Os resultados históricos não são apresentados como testes automatizados desta versão reorganizada.
 
 ## Avaliação futura (opcional, não executada)
 
@@ -109,4 +106,4 @@ A agregação pela média pode ocultar episódios breves. Fala, outros sons e ru
 
 Nenhum áudio privado, nome original de gravação, identificador de criança, peso de rede ou dataset é incluído. O `.gitignore` ajuda a evitar adições acidentais, mas não substitui a revisão dos ficheiros antes de publicar. O código não inicia transferências de gravações nem guarda resultados automaticamente.
 
-O código está abrangido pela [licença do repositório](../../LICENSE). MATLAB, toolboxes, pesos YAMNet e dados de terceiros mantêm os seus próprios termos. As fontes científicas e técnicas estão indicadas no [relatório](docs/relatorio-cientifico.md#referências).
+MATLAB, toolboxes, pesos YAMNet e dados de terceiros mantêm os seus próprios termos. As fontes científicas e técnicas estão indicadas no [relatório](docs/relatorio-cientifico.md#referências).

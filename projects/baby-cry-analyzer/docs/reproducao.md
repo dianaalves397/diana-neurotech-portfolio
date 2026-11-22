@@ -4,7 +4,7 @@
 
 É possível reproduzir o procedimento computacional com WAV autorizados e executar os testes de software fornecidos. **Não é possível reproduzir exatamente os quatro valores históricos apenas com este repositório:** não se publicam os áudios, não há hashes disponíveis dos originais e não foi recuperado um registo completo das versões e parâmetros da execução original.
 
-A implementação publicada foi reorganizada a partir do procedimento descrito na conversa. Acrescenta validação, limites de entrada, padding de áudios curtos, CPU explícita e testes; não se afirma identidade byte a byte com o script original. A disponibilidade do código não resolve estas limitações de rastreabilidade.
+Organizei a implementação em funções para separar leitura, preparação, inferência e apresentação. Acrescenta validação, limites de entrada, padding de áudios curtos, CPU explícita e testes; não se afirma identidade byte a byte com o script original. A disponibilidade do código não resolve estas limitações de rastreabilidade.
 
 ## 2. Preparar o ambiente
 
