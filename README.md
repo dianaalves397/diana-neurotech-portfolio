@@ -77,6 +77,16 @@ Competencies studied and applied through **Biomedical Technology** coursework, p
 
 ---
 
+## Baby Cry Analyzer — MATLAB & YAMNet
+
+An exploratory acoustic-analysis project using pretrained **YAMNet** to read WAV files, aggregate frame scores and display the leading sound category and the score for `Crying, sobbing`.
+
+**Evidence:** four reported historical tests (two infant-cry recordings, silence and adult speech), including a cry recording classified as Speech. Quantitative detection performance and cry-cause recognition have **not** been validated. Private audio is not published; execution of the reorganised code remains to be verified in MATLAB.
+
+[**→ Project and MATLAB code**](projects/baby-cry-analyzer) · [**→ Scientific report (Portuguese)**](projects/baby-cry-analyzer/docs/relatorio-cientifico.md) · [**→ Reproduction guide**](projects/baby-cry-analyzer/docs/reproducao.md) · [**→ Reported observations**](projects/baby-cry-analyzer/results/exploratory-observations.csv)
+
+---
+
 ## 🧪 Selected Biomedical Technology coursework
 
 ### MATLAB Signal Processing Foundations (PSM)

@@ -1,0 +1,18 @@
+# Keep recordings, model weights, private data and local results off GitHub.
+*.wav
+*.WAV
+*.mp3
+*.m4a
+*.flac
+*.ogg
+*.mp4
+*.mat
+*.h5
+*.zip
+*.asv
+data/private/
+data/raw/
+local-results/
+models/
+evaluation/
+*.log
