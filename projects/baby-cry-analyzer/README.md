@@ -87,17 +87,6 @@ smoke_yamnet;
 Os testes unitários verificam média temporal, orientação das pontuações, empate, canais, padding e métricas com exemplos construídos. O smoke test verifica inferência real e integridade das saídas.
 
 
-## Avaliação futura (opcional, não executada)
-
-Criar fora do repositório duas pastas, `choro/` e `nao_choro/`, com WAV de origem autorizada. Depois:
-
-```matlab
-addpath('matlab');
-[metrics, perFile] = evaluate_dataset('C:/dados-privados/avaliacao');
-```
-
-As métricas são frações entre 0 e 1. `Precision` é `NaN` se não houver previsões positivas. A função não grava ficheiros, ignora subpastas e interrompe a execução se algum WAV falhar. O protocolo de independência, anotação e análise encontra-se no relatório; uma pasta com áudios, por si só, não garante uma avaliação válida.
-
 ## Limitações e privacidade
 
 A agregação pela média pode ocultar episódios breves. Fala, outros sons e ruído podem competir com a classe de choro. Há diferenças entre as distribuições de treino e de utilização; a classe genérica não é específica de bebés. Não se validaram causas de choro, precisão clínica ou desempenho em utilização contínua.
