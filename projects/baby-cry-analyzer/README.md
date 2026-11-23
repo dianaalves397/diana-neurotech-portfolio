@@ -50,7 +50,7 @@ Testei o projeto com duas gravações de choro infantil, uma gravação predomin
 | T03 | Gravação predominantemente silenciosa | Silence | 78,34% | 0,11% |
 | T04 | Fala da autora | Speech | 63,23% | 0,75% |
 
-T02 evidencia uma falha do critério de categoria principal face à descrição da entrada como choro. T01, T03 e T04 apresentam categorias coerentes com as descrições fornecidas, mas quatro exemplos escolhidos por conveniência não sustentam uma estimativa de desempenho geral. Os rótulos «dor abdominal» e «desconforto» descrevem os dados de origem, **não diagnósticos nem previsões do programa**.
+T02 evidencia uma falha do critério de categoria principal face à descrição da entrada como choro. T01, T03 e T04 apresentam categorias coerentes com as descrições fornecidas.
 
 ## Organização
 
