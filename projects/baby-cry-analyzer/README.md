@@ -39,8 +39,6 @@ result = baby_cry_detector('C:/dados-privados/exemplo.wav');
 result.Ranking
 ```
 
-A pontuação é multiplicada por 100 para apresentação. **34,94% de pontuação não significa 34,94% de precisão nem probabilidade calibrada de choro.** Não há aprendizagem ou ajuste aos quatro testes na versão publicada.
-
 ## Resultados dos testes
 
 Testei o projeto com duas gravações de choro infantil, uma gravação predominantemente silenciosa e uma gravação da minha voz. A tabela reúne as categorias e pontuações obtidas.
