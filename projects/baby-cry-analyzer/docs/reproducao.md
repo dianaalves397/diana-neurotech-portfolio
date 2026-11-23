@@ -1,54 +1,165 @@
-# Metodologia de execução e reprodução
+# Como reproduzir o projeto
 
-## 1. Âmbito da reprodução
+Este documento explica como preparei e executei o **Baby Cry Analyzer** e como qualquer pessoa pode testar o projeto no MATLAB.
 
-É possível reproduzir o procedimento computacional com WAV autorizados e executar os testes de software fornecidos. **Não é possível reproduzir exatamente os quatro valores históricos apenas com este repositório:** não se publicam os áudios, não há hashes disponíveis dos originais e não foi recuperado um registo completo das versões e parâmetros da execução original.
+O programa recebe um ficheiro WAV, prepara o áudio para a YAMNet e apresenta as categorias sonoras com maior pontuação. O processamento é feito localmente no computador.
 
-Organizei a implementação em funções para separar leitura, preparação, inferência e apresentação. Acrescenta validação, limites de entrada, padding de áudios curtos, CPU explícita e testes; não se afirma identidade byte a byte com o script original. A disponibilidade do código não resolve estas limitações de rastreabilidade.
+## 1. O que é necessário
 
-## 2. Preparar o ambiente
+Para executar o projeto usei:
 
-1. Instalar MATLAB R2024a+ com Audio Toolbox e Deep Learning Toolbox.
-2. Instalar a rede indicada por `audioPretrainedNetwork("yamnet")`, usando a ligação fornecida pela própria função se necessário. Não adicionar o pacote de pesos ao Git.
-3. Abrir a pasta deste projeto e executar `addpath('matlab')`.
-4. Registar localmente `version`, `ver` e o commit do repositório. A lista completa de produtos pode ser guardada num registo privado; rever qualquer exportação antes de partilhar.
-5. Executar os testes indicados no README. Guardar o resultado real, sem substituir falhas por valores históricos.
+- MATLAB R2024a ou mais recente;
+- Audio Toolbox;
+- Deep Learning Toolbox;
+- rede pré-treinada YAMNet da MathWorks;
+- um ficheiro de áudio em formato WAV.
 
-## 3. Procedimento fixo
+A YAMNet pode ser carregada no MATLAB com:
 
-| Etapa | Decisão publicada |
+```matlab
+[net,classes] = audioPretrainedNetwork("yamnet");
+```
+
+Se a rede ainda não estiver instalada, o próprio MATLAB apresenta a opção para instalar os ficheiros necessários.
+
+## 2. Preparar o projeto
+
+Depois de descarregar ou clonar o repositório, abrir no MATLAB a pasta:
+
+```text
+projects/baby-cry-analyzer
+```
+
+Em seguida, adicionar a pasta que contém o código:
+
+```matlab
+addpath('matlab');
+```
+
+A partir daqui o programa já pode ser executado.
+
+## 3. Executar a análise
+
+A forma mais simples é escrever:
+
+```matlab
+result = baby_cry_detector;
+```
+
+É aberta uma janela para escolher o ficheiro WAV.
+
+Também é possível indicar diretamente o caminho do áudio:
+
+```matlab
+result = baby_cry_detector('C:/dados/exemplo.wav');
+```
+
+Para consultar o ranking das categorias obtidas:
+
+```matlab
+result.Ranking
+```
+
+## 4. O que acontece ao áudio
+
+Organizei o código em várias funções para separar cada etapa do processamento.
+
+O funcionamento é o seguinte:
+
+1. o programa confirma que o ficheiro existe e que é WAV;
+2. lê as informações do áudio e as respetivas amostras;
+3. se existirem vários canais, converte o áudio para mono através da média dos canais;
+4. se o áudio tiver menos de 1 segundo, completa o sinal com zeros;
+5. utiliza `yamnetPreprocess` para preparar o áudio para a YAMNet;
+6. executa a rede pré-treinada;
+7. calcula a pontuação média de cada categoria ao longo dos segmentos analisados;
+8. ordena as categorias e apresenta as cinco com maior pontuação;
+9. apresenta também a pontuação da categoria `Crying, sobbing`.
+
+Na versão atual usei 50% de sobreposição no pré-processamento e a inferência é feita em CPU.
+
+## 5. Ficheiros aceites
+
+Para manter o funcionamento do programa previsível, defini algumas verificações na entrada:
+
+- apenas ficheiros WAV;
+- frequência de amostragem igual ou superior a 16 kHz;
+- duração máxima de 300 segundos;
+- amostras de áudio válidas dentro do intervalo esperado pelo MATLAB.
+
+O programa não normaliza automaticamente o volume nem remove silêncio antes da análise.
+
+## 6. Estrutura do código
+
+Os principais ficheiros MATLAB são:
+
+| Ficheiro | Função |
 | --- | --- |
-| Leitura | `audioinfo` antes de `audioread`; apenas WAV; máximo 300 s |
-| Validação | Amostras finitas e reais, [-1,1]; amostragem inteira ≥16 kHz |
-| Canais | Média aritmética dos canais, sem normalização de pico |
-| Áudio curto | Completar com zeros até 1 s, devolvendo a duração do padding |
-| Características | `yamnetPreprocess(mono,fs,OverlapPercentage=50)`; reamostragem interna |
-| Modelo | `audioPretrainedNetwork("yamnet")`, sem retreino |
-| Inferência | `minibatchpredict`, CPU, lotes de 32, formato de saída `BC` |
-| Agregação | Média aritmética de cada classe sobre os segmentos devolvidos |
-| Categoria principal | Máximo da média; em empate, primeiro índice da ordem do modelo |
-| Pontuação de choro | Média da classe de nome exato `Crying, sobbing` |
-| Regra binária | Positivo apenas se essa classe for a categoria principal |
+| `baby_cry_detector.m` | inicia a análise e apresenta os resultados |
+| `analyze_file.m` | coordena a leitura, pré-processamento e inferência |
+| `prepare_audio.m` | prepara e valida o áudio |
+| `summarize_scores.m` | calcula e organiza as pontuações |
+| `binary_metrics.m` | contém funções de cálculo de métricas |
+| `evaluate_dataset.m` | permite analisar conjuntos de WAV organizados por classes |
 
-A escolha da média não é a votação maioritária das categorias por segmento. Não se normaliza a amplitude nem se remove silêncio: estas operações poderiam alterar as pontuações e exigiriam uma nova versão do procedimento. O processamento do final do áudio segue a implementação de `yamnetPreprocess` da versão instalada; registar essa versão.
+Esta separação tornou o projeto mais simples de testar e de alterar sem colocar toda a lógica num único script.
 
-## 4. Registo privado recomendado
+## 7. Testar se o código está a funcionar
 
-Para futuras experiências, guardar um identificador pseudónimo, hash SHA-256 do áudio, origem/licença/consentimento, rótulo e método de anotação, duração, frequência de amostragem, número de canais, data, versão MATLAB/toolboxes/modelo, commit, parâmetros e pontuações. Manter separada a correspondência entre identificador e pessoa. Os hashes e registos não são requisitos para executar o protótipo, mas permitem verificar que duas execuções usaram os mesmos dados.
+Incluí testes para verificar partes principais do processamento.
 
-O programa devolve duração, canais, frequência de amostragem, padding e versão MATLAB; não inclui caminho nem nome de entrada. A identificação dos pesos e a proveniência dos dados devem ser registadas separadamente pelo investigador. O CSV público contém só quatro observações agregadas históricas.
+Na pasta do projeto executar:
 
-## 5. Diagnóstico de problemas
+```matlab
+testResults = runtests('tests/test_core.m');
+assertSuccess(testResults);
+```
 
-- **Função não encontrada:** confirmar a pasta atual, `addpath('matlab')`, versão e produtos instalados.
-- **Pesos em falta:** seguir a mensagem de `audioPretrainedNetwork` e adicionar a pasta dos pesos ao caminho.
-- **Formato de pontuações inesperado:** não transpor às cegas; confirmar as versões e o formato `BC`. O código deve recusar uma matriz incompatível.
-- **WAV abaixo de 16 kHz:** a versão publicada recusa-o; uma simples reamostragem não recupera informação perdida. Documentar uma alteração do protocolo se esses dados forem necessários.
-- **Memória insuficiente:** usar gravações mais curtas; não eliminar silenciosamente secções para produzir um resultado favorável.
-- **Nenhuma previsão de choro:** a precisão positiva fica indefinida (`NaN`); isto não corresponde a 100% de precisão.
+Também existe um teste de integração com a YAMNet:
 
-## 6. Critérios para uma futura avaliação quantitativa
+```matlab
+addpath('tests');
+smoke_yamnet;
+```
 
-Fixar a tarefa e a regra antes de observar o conjunto final. Reunir positivos e negativos variados; verificar os rótulos; separar gravações por bebé, pessoa, sessão e fonte; impedir que segmentos do mesmo áudio apareçam em divisões diferentes. Qualquer escolha de limiar deve ocorrer exclusivamente num conjunto de desenvolvimento.
+Se estes testes terminarem sem erros, as principais funções do projeto estão a ser executadas corretamente no ambiente instalado.
 
-`evaluate_dataset` processa WAV diretamente nas duas pastas, numa ordem determinística por nome. Não faz deteção automática de duplicados, divisão por participante, verificação de consentimento ou intervalos de confiança. Esses controlos continuam a ser responsabilidade do protocolo. Comparar o método com referências simples, apresentar contagens e incerteza, e analisar os erros. Não utilizar os quatro exemplos desta publicação para ajustar um limiar e depois comunicar desempenho como se fossem dados independentes.
+## 8. Resultados que obtive
+
+Para testar o projeto utilizei duas gravações de choro infantil, uma gravação predominantemente silenciosa e uma gravação da minha voz.
+
+Os resultados que registei estão no ficheiro:
+
+```text
+results/exploratory-observations.csv
+```
+
+Os áudios usados nesses testes não estão incluídos no repositório. Por isso, quem descarregar o projeto pode reproduzir o mesmo procedimento com outros ficheiros WAV, mas não necessariamente obter exatamente os mesmos valores que obtive nos meus testes.
+
+## 9. Problemas mais comuns
+
+### A YAMNet não é encontrada
+
+Executar:
+
+```matlab
+[net,classes] = audioPretrainedNetwork("yamnet");
+```
+
+e seguir a indicação do MATLAB para instalar a rede caso seja necessário.
+
+### O MATLAB não encontra as funções do projeto
+
+Confirmar que a pasta atual é `projects/baby-cry-analyzer` e executar novamente:
+
+```matlab
+addpath('matlab');
+```
+
+### O ficheiro WAV não é aceite
+
+Confirmar a extensão, a duração e a frequência de amostragem do áudio.
+
+### O resultado é diferente do meu
+
+As pontuações podem variar se forem utilizados outros áudios ou versões diferentes do MATLAB, das toolboxes ou da rede. O objetivo deste documento é permitir repetir o procedimento do projeto e perceber como o código foi executado.
