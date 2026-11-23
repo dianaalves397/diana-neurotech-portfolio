@@ -85,12 +85,3 @@ smoke_yamnet;
 ```
 
 Os testes unitários verificam média temporal, orientação das pontuações, empate, canais, padding e métricas com exemplos construídos. O smoke test verifica inferência real e integridade das saídas.
-
-
-## Limitações e privacidade
-
-A agregação pela média pode ocultar episódios breves. Fala, outros sons e ruído podem competir com a classe de choro. Há diferenças entre as distribuições de treino e de utilização; a classe genérica não é específica de bebés. Não se validaram causas de choro, precisão clínica ou desempenho em utilização contínua.
-
-Nenhum áudio privado, nome original de gravação, identificador de criança, peso de rede ou dataset é incluído. O `.gitignore` ajuda a evitar adições acidentais, mas não substitui a revisão dos ficheiros antes de publicar. O código não inicia transferências de gravações nem guarda resultados automaticamente.
-
-MATLAB, toolboxes, pesos YAMNet e dados de terceiros mantêm os seus próprios termos. As fontes científicas e técnicas estão indicadas no [relatório](docs/relatorio-cientifico.md#referências).
