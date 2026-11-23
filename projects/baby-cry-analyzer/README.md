@@ -84,7 +84,7 @@ addpath('tests');
 smoke_yamnet;
 ```
 
-Os testes unitários verificam média temporal, orientação das pontuações, empate, canais, padding e métricas com exemplos construídos. O smoke test verifica inferência real e integridade das saídas; não exige que silêncio receba uma classe específica e não mede precisão.
+Os testes unitários verificam média temporal, orientação das pontuações, empate, canais, padding e métricas com exemplos construídos. O smoke test verifica inferência real e integridade das saídas.
 
 
 ## Avaliação futura (opcional, não executada)
